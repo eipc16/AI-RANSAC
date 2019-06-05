@@ -1,5 +1,0 @@
-heuristics
-logic
-models
-transformations
-utils

@@ -7,7 +7,11 @@ class Point:
         self._y = y;
 
     def dist(self, p):
-        return np.square(self._x - p._x) + np.square(self._y - p._y)
+        out = np.square(self._x - p._x) + np.square(self._y - p._y)
+        return out
+
+    def __repr__(self):
+        return f"[X: {self._x}, Y: {self._y}]"
 
 class KeyPoint(Point):
     def __init__(self, x, y, features):
