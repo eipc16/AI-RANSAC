@@ -21,3 +21,22 @@ class PairProcessor:
         distances = list(map(lambda p: (p, point.dist(_unpack(p))), points))
         distances = sorted(distances, key=lambda x: x[1])
         return list(map(op.itemgetter(0), distances[:neighbours_limit]))
+
+
+from models.points import Point
+
+x = [(Point(1, 122), Point(2, 400)), (Point(4000, 1), Point(1, 5)), (Point(4, 3), Point(2, 4)), (Point(4, 1), Point(2, 3)), (Point(2, 0), Point(1, 666))]
+
+p_x = Point(4, 3)
+p_y = Point(2, 4)
+
+processor = PairProcessor()
+
+pairs = processor.consistent_pairs(x, 4, 0.0)
+print(pairs)
+
+pairs = processor.consistent_pairs(x, 4, 0.1)
+print(pairs)
+
+pairs = processor.consistent_pairs(x, 4, 2.0)
+print(pairs)
