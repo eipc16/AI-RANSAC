@@ -1,3 +1,11 @@
 venv/
 dist/
 build/
+
+/venv
+/dist
+/build
+
+/venv/
+/dist/
+/build/
