@@ -10,6 +10,9 @@ class Point:
         out = np.square(self._x - p._x) + np.square(self._y - p._y)
         return out
 
+    def toJSON(self):
+        return {'x': self._x, 'y': self._y}
+
     def __repr__(self):
         return f"[X: {self._x}, Y: {self._y}]"
 
@@ -24,8 +27,7 @@ class KeyPoint(Point):
         return self._size
 
     def feature_dist(self, keypoint):
-        feature_pairs = zip(self._features, keypoint._features)
-        return np.sqrt(sum(np.square(x - y) for x, y in feature_pairs))
+        return np.linalg.norm(self._features - keypoint._features)
 
     def __repr__(self):
         return f"[{self._index}] X: {self._x}, Y: {self._y}, Features: {self._features}"

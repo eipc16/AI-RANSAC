@@ -1,7 +1,11 @@
 import operator as op
 import functools as f
+from multiprocessing import Pool
+
+from utils.time_utils import get_execution_time
 
 class PairProcessor:
+    @get_execution_time
     def consistent_pairs(self, pairs, neighbours_limit, threshold):
         def _neighbours_count(pair):
             neighboursOfFirst = self._neighbours(pair[0], list(filter(f.partial(op.ne, pair), pairs)), neighbours_limit)
@@ -15,28 +19,13 @@ class PairProcessor:
 
 
     def _neighbours(self, point, points, neighbours_limit):
-        def _unpack(p):
-            return p[0] if isinstance(p, tuple) else p
-
-        distances = list(map(lambda p: (p, point.dist(_unpack(p))), points))
+        distances = list(map(lambda x: self.get_distance_tuple(x, point), points))
         distances = sorted(distances, key=lambda x: x[1])
         return list(map(op.itemgetter(0), distances[:neighbours_limit]))
 
+    @staticmethod
+    def get_distance_tuple(target, source):
+        def _unpack(p):
+            return p[0] if isinstance(p, tuple) else p
 
-from models.points import Point
-
-x = [(Point(1, 122), Point(2, 400)), (Point(4000, 1), Point(1, 5)), (Point(4, 3), Point(2, 4)), (Point(4, 1), Point(2, 3)), (Point(2, 0), Point(1, 666))]
-
-p_x = Point(4, 3)
-p_y = Point(2, 4)
-
-processor = PairProcessor()
-
-pairs = processor.consistent_pairs(x, 4, 0.0)
-print(pairs)
-
-pairs = processor.consistent_pairs(x, 4, 0.1)
-print(pairs)
-
-pairs = processor.consistent_pairs(x, 4, 2.0)
-print(pairs)
+        return (target, source.dist(_unpack(target)))

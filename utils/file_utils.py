@@ -1,5 +1,6 @@
 import json, os, imageio
 import numpy as np
+from PIL import Image as pilImage
 
 from models.points import Point, KeyPoint
 from models.image import Image
@@ -36,19 +37,42 @@ class FileHelper:
         path = f"{self._path}/{dest_path}"
         out_list = []
         
-        if isinstance(obj_to_save, list):
-            for obj in obj_to_save:
-                out_list.append(self._encoder.encode(obj))
-        else:
-            out_list = self._encoder.encode(obj_to_save)
+        def _recursive_list_encoder(target_list):
+            if not (isinstance(target_list, list) or isinstance(target_list, np.ndarray)):
+                return self._encoder.encode(target_list)
 
+            out_obj = []
+
+            for obj in target_list:
+                if isinstance(obj, list) or isinstance(obj, np.ndarray):
+                    out_obj.append(_recursive_list_encoder(obj))
+                else:
+                    out_obj.append(self._encoder.encode(obj))
+
+            return out_obj
+
+        out_list = _recursive_list_encoder(obj_to_save)
         json_string = json.dumps(out_list, indent=4)
      
         with open(path, mode='w') as f:
             f.write(json_string)
 
-    def load_image(self, path_name):
-        return imageio.imread(f"{self._path}/{path_name}")
+    def load_from_json(self, file_path):
+        path = f"{self._path}/{file_path}"
 
-    def save_image(self, path_name, image):
-        imageio.imwrite(f"{self._path}/{path_name}", image)
+        def parse_obj(target):
+            if isinstance(target, list):
+                output = []
+                for i in target:
+                    output.append(parse_obj(i))
+                return output
+            elif isinstance(target, str):
+                return json.loads(target)
+            else:
+                return target
+
+        with open(path, mode='rb') as f:
+            output = json.load(f)
+            output = parse_obj(output)
+
+        return output
