@@ -1,4 +1,5 @@
 setup.py
+files/__init__.py
 heuristics/__init__.py
 logic/__init__.py
 logic/pairs_processing.py

@@ -3,9 +3,7 @@ import numpy as np
 
 from models.points import Point, KeyPoint
 from models.image import Image
-
-from json_utils import JSONHelper
-
+from utils.json_utils import JSONHelper
 
 class FileHelper:
     def __init__(self, path):
@@ -17,20 +15,20 @@ class FileHelper:
 
     def load_key_points(self, path_name):
 
-        def _parse_keypoint(line):
+        def _parse_keypoint(line, index):
             items = line.split(" ")
             x, y = float(items[0]), float(items[1])
             
             features = np.array(list(map(lambda x: int(x), items[5:])))
 
-            return KeyPoint(x, y, features)
+            return KeyPoint(x, y, features, index=index)
 
 
         path = f"{self._path}/{path_name}.haraff.sift"
        
         with open(path, mode='r') as f:
             content = f.readlines()[2:]
-            keyPoints = list(map(lambda x : _parse_keypoint(x), content))
+            keyPoints = list(map(lambda x: _parse_keypoint(x[1], x[0]), enumerate(content)))
             return Image(keyPoints)
 
 

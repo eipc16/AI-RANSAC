@@ -14,10 +14,18 @@ class Point:
         return f"[X: {self._x}, Y: {self._y}]"
 
 class KeyPoint(Point):
-    def __init__(self, x, y, features):
+    def __init__(self, x, y, features, index = 0):
         super().__init__(x, y)
-        self._features = features
-        self._size = features.shape[0]
+        self._index = index
+        self._features = features if isinstance(features, np.ndarray) else np.array(features)
+        self._size = self._features.shape[0]
 
     def size(self):
         return self._size
+
+    def feature_dist(self, keypoint):
+        feature_pairs = zip(self._features, keypoint._features)
+        return np.sqrt(sum(np.square(x - y) for x, y in feature_pairs))
+
+    def __repr__(self):
+        return f"[{self._index}] X: {self._x}, Y: {self._y}, Features: {self._features}"
