@@ -11,8 +11,7 @@ class Transformation:
         try:
             inv_matrix = np.linalg.inv(matrix)
             mult_res = inv_matrix @ vector
-            result = self._result_vector(mult_res.flatten())
-            return result
+            return self._result_vector(mult_res.flatten())
         except np.linalg.LinAlgError:
             return None
 
@@ -33,13 +32,13 @@ class AffineTransformation(Transformation):
             [0.0, 0.0, 0.0, selectedPairs[2][0]['x'], selectedPairs[2][0]['y'], 1.0]
         ])
 
-        vector = np.atleast_2d([
-            selectedPairs[0][0]['x'],
-            selectedPairs[1][0]['x'],
-            selectedPairs[2][0]['x'],
-            selectedPairs[0][0]['y'],
-            selectedPairs[1][0]['y'],
-            selectedPairs[2][0]['y'],
+        vector = np.array([
+            selectedPairs[0][1]['x'],
+            selectedPairs[1][1]['x'],
+            selectedPairs[2][1]['x'],
+            selectedPairs[0][1]['y'],
+            selectedPairs[1][1]['y'],
+            selectedPairs[2][1]['y'],
         ])
 
         return self._model(matrix, vector.T)

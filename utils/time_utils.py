@@ -8,7 +8,7 @@ def get_execution_time(func):
         result = func(*args, **kwargs)
         end = time()
 
-        print(f"[{func.__name__}({args}, {kwargs})] Execution time: %.4f seconds" % (end - start))
+        print(f"[{func.__name__}()] Execution time: %.4f seconds" % (end - start))
         
         return result
     

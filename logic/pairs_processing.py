@@ -1,31 +1,41 @@
 import operator as op
 import functools as f
-from multiprocessing import Pool
+import numpy as np
 
+from models.points import Point
 from utils.time_utils import get_execution_time
+
 
 class PairProcessor:
     @get_execution_time
     def consistent_pairs(self, pairs, neighbours_limit, threshold):
         def _neighbours_count(pair):
-            neighboursOfFirst = self._neighbours(pair[0], list(filter(f.partial(op.ne, pair), pairs)), neighbours_limit)
-            neighboursOfSecond = self._neighbours(pair[1], list(map(lambda x: x[1], filter(f.partial(op.ne, pair), pairs))), neighbours_limit)
-            return len(list(filter(lambda x: x[1] in neighboursOfSecond, neighboursOfFirst)))
+            neighbours_of_first = self._neighbours(pair[0], list(filter(f.partial(op.ne, pair), pairs)), neighbours_limit)
+            neighbours_of_second = self._neighbours(pair[1], list(map(lambda x: x[1], filter(f.partial(op.ne, pair), pairs))), neighbours_limit)
+
+            with open('neigh_dump.txt', mode='w') as file:
+                file.write(str(neighbours_of_first))
+
+            return len(list(filter(lambda x: x[1] in neighbours_of_second, neighbours_of_first)))
 
         def _in_threshold(x):
-            return float(_neighbours_count(x)) / neighbours_limit >= threshold
+            return float(_neighbours_count(x) / neighbours_limit >= threshold)
 
-        return list(filter(lambda x: _in_threshold(x), pairs))
+        filtered_points = np.array(list(filter(lambda p : _in_threshold(p), pairs)))
 
-
-    def _neighbours(self, point, points, neighbours_limit):
-        distances = list(map(lambda x: self.get_distance_tuple(x, point), points))
-        distances = sorted(distances, key=lambda x: x[1])
-        return list(map(op.itemgetter(0), distances[:neighbours_limit]))
+        return np.array([(Point(k['x'], k['y']), Point(k2['x'], k2['y'])) for k, k2 in filtered_points])
 
     @staticmethod
-    def get_distance_tuple(target, source):
-        def _unpack(p):
-            return p[0] if isinstance(p, tuple) else p
+    def _neighbours(point, points, neighbours_limit):
+        if len(points) < 0:
+            return np.array([])
 
-        return (target, source.dist(_unpack(target)))
+        sec_img_points = np.array(points)
+        if isinstance(points[0], list):
+            sec_img_points = np.array([t[0] for t in points])
+
+        point_coords = np.array([[point['x'], point['y']]])
+        points_coords = np.array([[p['x'], p['y']] for p in sec_img_points])
+        dist = np.sum((points_coords - point_coords) ** 2, axis=1)
+        indices = np.argsort(dist)[:neighbours_limit]
+        return np.array(points)[indices]

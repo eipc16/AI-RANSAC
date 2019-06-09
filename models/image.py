@@ -1,11 +1,8 @@
 import numpy as np
 from functools import partial
 from itertools import compress
-from models.points import KeyPoint
 from multiprocessing import Pool
 from utils.time_utils import get_execution_time
-import tqdm
-
 
 class Image:
     def __init__(self, keypoints):
@@ -13,7 +10,7 @@ class Image:
 
     @get_execution_time
     def get_keypoint_pairs(self, picture):
-        return [(self._keypoints[i], picture._keypoints[j]) for i, j in self.closest_indexes_pairs(picture)]
+        return np.asarray([(self._keypoints[i], picture._keypoints[j]) for i, j in self.closest_indexes_pairs(picture)])
 
     @get_execution_time
     def closest_indexes_pairs(self, picture):
@@ -42,7 +39,3 @@ class Image:
     def _nearest_keypoint_index(keypoint, keypoint_list):
         distances = np.array([keypoint.feature_dist(x) for x in keypoint_list])
         return np.argmin(distances)
-
-    @staticmethod
-    def get_pairs_dict(keypoint_pairs):
-        return list(map(lambda x: (x[0].toJSON(), x[1].toJSON()), keypoint_pairs))

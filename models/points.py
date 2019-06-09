@@ -3,21 +3,28 @@ from json import JSONEncoder
 
 class Point:
     def __init__(self, x, y):
-        self._x = x;
-        self._y = y;
+        self.x = x
+        self.y = y
 
     def dist(self, p):
-        out = np.square(self._x - p._x) + np.square(self._y - p._y)
+        out = np.square(self.x - p.x) + np.square(self.y - p.y)
         return out
 
+    def __sub__(self, other):
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
     def toJSON(self):
-        return {'x': self._x, 'y': self._y}
+        return {'x': self.x, 'y': self.y}
 
     def __repr__(self):
-        return f"[X: {self._x}, Y: {self._y}]"
+        return f"[X: {self.x}, Y: {self.y}]"
+
 
 class KeyPoint(Point):
-    def __init__(self, x, y, features, index = 0):
+    def __init__(self, x, y, features, index=0):
         super().__init__(x, y)
         self._index = index
         self._features = features if isinstance(features, np.ndarray) else np.array(features)
@@ -29,5 +36,17 @@ class KeyPoint(Point):
     def feature_dist(self, keypoint):
         return np.linalg.norm(self._features - keypoint._features)
 
+    def toJSON(self):
+        point_dict = super().toJSON()
+        point_dict['features'] = self._features
+        return point_dict
+
     def __repr__(self):
-        return f"[{self._index}] X: {self._x}, Y: {self._y}, Features: {self._features}"
+        return f"[{self._index}] X: {self.x}, Y: {self.y}, Features: {self._features}"
+
+    def __iter__(self):
+        yield from {
+            'x': self.x,
+            'y': self.y,
+            'features': self._features
+        }.items()
