@@ -18,10 +18,9 @@ class Transformation:
 class AffineTransformation(Transformation):
     def __init__(self, heuristic):
         self._heuristic = heuristic
-        self._points_cnt = 3
     
     def get_model(self, pairs):
-        selectedPairs = self._heuristic.selected_pairs(pairs, self._points_cnt)
+        selectedPairs = self._heuristic.selected_pairs(pairs, limit=3)
         
         matrix = np.array([
             [selectedPairs[0][0]['x'], selectedPairs[0][0]['y'], 1.0, 0.0, 0.0, 0.0],
@@ -48,4 +47,43 @@ class AffineTransformation(Transformation):
             [vector[0], vector[1], vector[2]],
             [vector[3], vector[4], vector[5]],
             [0.0, 0.0, 1.0]
+        ])
+
+
+class PerspectiveTransformation(Transformation):
+    def __init__(self, heuristic):
+        self._heuristic = heuristic
+
+    def get_model(self, pairs):
+        selectedPairs = self._heuristic.selected_pairs(pairs, limit=4)
+
+        matrix = np.array([
+            [selectedPairs[0][0]['x'], selectedPairs[0][0]['y'], 1.0, 0.0, 0.0, 0.0, -selectedPairs[0][1]['x'] * selectedPairs[0][0]['x'], -selectedPairs[0][1]['y'] * selectedPairs[0][0]['x']],
+            [selectedPairs[1][0]['x'], selectedPairs[1][0]['y'], 1.0, 0.0, 0.0, 0.0, -selectedPairs[1][1]['x'] * selectedPairs[1][0]['x'], -selectedPairs[1][1]['y'] * selectedPairs[1][0]['x']],
+            [selectedPairs[2][0]['x'], selectedPairs[2][0]['y'], 1.0, 0.0, 0.0, 0.0, -selectedPairs[2][1]['x'] * selectedPairs[2][0]['x'], -selectedPairs[2][1]['y'] * selectedPairs[2][0]['x']],
+            [selectedPairs[3][0]['x'], selectedPairs[3][0]['y'], 1.0, 0.0, 0.0, 0.0, -selectedPairs[3][1]['x'] * selectedPairs[3][0]['x'], -selectedPairs[3][1]['y'] * selectedPairs[3][0]['x']],
+            [0.0, 0.0, 0.0, selectedPairs[0][0]['x'], selectedPairs[0][0]['y'], 1.0, -selectedPairs[0][1]['y'] * selectedPairs[0][0]['x'], -selectedPairs[0][1]['y'] * selectedPairs[0][0]['y']],
+            [0.0, 0.0, 0.0, selectedPairs[1][0]['x'], selectedPairs[1][0]['y'], 1.0, -selectedPairs[1][1]['y'] * selectedPairs[1][0]['x'], -selectedPairs[1][1]['y'] * selectedPairs[1][0]['y']],
+            [0.0, 0.0, 0.0, selectedPairs[2][0]['x'], selectedPairs[2][0]['y'], 1.0, -selectedPairs[2][1]['y'] * selectedPairs[2][0]['x'], -selectedPairs[2][1]['y'] * selectedPairs[2][0]['y']],
+            [0.0, 0.0, 0.0, selectedPairs[3][0]['x'], selectedPairs[3][0]['y'], 1.0, -selectedPairs[3][1]['y'] * selectedPairs[3][0]['x'], -selectedPairs[3][1]['y'] * selectedPairs[3][0]['y']]
+        ])
+
+        vector = np.array([
+            selectedPairs[0][1]['x'],
+            selectedPairs[1][1]['x'],
+            selectedPairs[2][1]['x'],
+            selectedPairs[3][1]['x'],
+            selectedPairs[0][1]['y'],
+            selectedPairs[1][1]['y'],
+            selectedPairs[2][1]['y'],
+            selectedPairs[3][1]['y'],
+        ])
+
+        return self._model(matrix, vector.T)
+
+    def _result_vector(self, vector):
+        return np.array([
+            [vector[0], vector[1], vector[2]],
+            [vector[3], vector[4], vector[5]],
+            [vector[6], vector[7], 1.0]
         ])

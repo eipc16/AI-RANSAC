@@ -3,19 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="6774203c-bbe7-4018-b29e-6f29a59f014a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_consistent_pairs.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/mug/mug_consistent_pairs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_out.png" beforeDir="false" afterPath="$PROJECT_DIR$/files/mug/mug_out.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_pairs.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/mug/mug_pairs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_ransac_out.png" beforeDir="false" afterPath="$PROJECT_DIR$/files/mug/mug_ransac_out.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_ransac_pairs.json" beforeDir="false" afterPath="$PROJECT_DIR$/files/mug/mug_ransac_pairs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/extract.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/extract_features_64bit.ln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/harhessift.basis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift.params" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/extract_features_64bit.ln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/harhessift.basis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift.params" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift.params" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift.params" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift.params" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/heuristics/heuristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/heuristics/heuristics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic/pairs_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/pairs_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic/ransac.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/ransac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/points.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neigh_dump.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neigh_dump.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transformations/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformations/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/time_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/time_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/image_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/image_utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,86 +50,13 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="396">
-                <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+              <first_editor relative-caret-position="448">
+                <caret line="104" column="26" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
                 <folding>
                   <element signature="e#0#30#0" expanded="true" />
                 </folding>
               </first_editor>
               <second_editor relative-caret-position="-182" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/mug/mug_out.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/image.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="266">
-                <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-              </first_editor>
-              <second_editor relative-caret-position="-182" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/points.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="234">
-                <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-              </first_editor>
-              <second_editor relative-caret-position="-182" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/json_utils.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="266">
-                <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-                <folding>
-                  <element signature="e#0#28#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-124" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/file_utils.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="-951">
-                <caret line="4" column="41" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="41" />
-              </first_editor>
-              <second_editor relative-caret-position="-182" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logic/pairs_processing.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="286">
-                <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-                <folding>
-                  <element signature="e#0#21#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-104">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
-              </second_editor>
             </state>
           </provider>
         </entry>
@@ -127,6 +69,9 @@
       <find>72.572</find>
       <find>_index</find>
       <find>KeyPoint</find>
+      <find>{dest}_</find>
+      <find>\</find>
+      <find>orientation='v'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,15 +80,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/transformations/transform.py" />
         <option value="$PROJECT_DIR$/logic/ransac.py" />
         <option value="$PROJECT_DIR$/utils/time_utils.py" />
-        <option value="$PROJECT_DIR$/heuristics/heuristics.py" />
         <option value="$PROJECT_DIR$/models/points.py" />
         <option value="$PROJECT_DIR$/utils/json_utils.py" />
         <option value="$PROJECT_DIR$/logic/pairs_processing.py" />
         <option value="$PROJECT_DIR$/models/image.py" />
+        <option value="$PROJECT_DIR$/utils/file_utils.py" />
+        <option value="$PROJECT_DIR$/heuristics/heuristics.py" />
+        <option value="$PROJECT_DIR$/transformations/transform.py" />
+        <option value="$PROJECT_DIR$/utils/image_utils.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -170,12 +117,6 @@
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
               <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
               <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
@@ -283,18 +224,17 @@
       <updated>1560076425075</updated>
       <workItem from="1560076429714" duration="216000" />
       <workItem from="1560076758795" duration="3502000" />
-      <workItem from="1560080434674" duration="11141000" />
+      <workItem from="1560080434674" duration="21588000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14859000" />
+    <option name="totallyTimeSpent" value="25306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="37" width="1924" height="1045" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.1855615" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.15614973" />
       <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.16184351" />
       <window_info id="Favorites" order="2" sideWeight="0.20083682" side_tool="true" weight="0.12251656" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -308,8 +248,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005359" side_tool="true" weight="0.32915717" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.42011175" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2055866" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3039106" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -323,167 +263,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/mug/mug2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file:///usr/lib/python3.7/multiprocessing/context.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="225">
-            <caret line="14" selection-start-line="14" selection-end-line="14" />
-          </first_editor>
-          <second_editor relative-caret-position="-9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.7/site-packages/PIL/ImageDraw.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="232">
-            <caret line="33" selection-start-line="33" selection-end-line="33" />
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="139" column="6" lean-forward="true" selection-start-line="139" selection-start-column="6" selection-end-line="139" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/errors/0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-line="61" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/errors/1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-line="58" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/time_utils.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="286">
-            <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pairs_dump.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neigh_dump.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transformations/transform.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="130">
-            <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="156">
-            <caret line="6" selection-start-line="6" selection-end-line="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logic/ransac.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="990">
-            <caret line="42" selection-start-line="42" selection-end-line="42" />
-            <folding>
-              <element signature="e#0#18#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/points.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="28" column="36" lean-forward="true" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="234">
-            <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/json_utils.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="266">
-            <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-            <folding>
-              <element signature="e#0#28#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/mug/mug_consistent_pairs.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="414" column="43" selection-start-line="414" selection-start-column="43" selection-end-line="414" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/file_utils.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="-951">
-            <caret line="4" column="41" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="41" />
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
         </state>
       </provider>
     </entry>
@@ -520,6 +303,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug/mug_ransac_out.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book_right.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book_left.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book_left.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug/mug_out.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/image.py">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-512">
@@ -528,17 +326,175 @@
       </provider>
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="266">
-            <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <first_editor relative-caret-position="105">
+            <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           </first_editor>
           <second_editor relative-caret-position="-182" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_out.png">
+    <entry file="file://$PROJECT_DIR$/utils/file_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="156">
+            <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            <folding>
+              <element signature="e#0#24#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book__pairs.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="104">
+            <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book_right.png.haraff.sift.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_ransac_out.png">
+    <entry file="file://$PROJECT_DIR$/files/book_/book__pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book__consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transformations/transform.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="255">
+            <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book_right.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book_left.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/image_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="446">
+            <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <folding>
+              <element signature="e#0#32#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book__pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book__all_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book__consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/perspective/book__ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book__all_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book__ransac_pairs.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book_/book__ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="145" column="6" lean-forward="true" selection-start-line="145" selection-start-column="6" selection-end-line="145" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug1.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug2.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug2.png.haraff.sift.params">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug2.png.haraff.sift">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_pairs.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_consistent_pairs.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_all_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_affine/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_perspective/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_all_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_perspective/zamek1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_perspective/zamek_consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek2.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_perspective/zamek_ransac_pairs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
@@ -552,8 +508,8 @@
       </provider>
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="396">
-            <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <first_editor relative-caret-position="448">
+            <caret line="104" column="26" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
             <folding>
               <element signature="e#0#30#0" expanded="true" />
             </folding>
