@@ -10,33 +10,55 @@ class Heuristic:
     def selected_pairs(self, pairs, limit=3):
         pass
 
-    def update_pairs(self, pairs):
-        for i, pair in enumerate(pairs):
-            pair_hash = self.hash_pair(pair)
+    def update_pairs(self, pairs, value=1, increments=None):
+        def _get_new_value(pos, val, inc):
+            return self._occurences_dict[pos] + inc if inc is not None else val
 
-            if pair_hash in self._occurences_dict.keys():
-                self._occurences_dict.update({pair_hash: self._occurences_dict[pair_hash] + 10})
-            else:
-                self._occurences_dict.update({pair_hash: 1})
+        for pair in pairs:
+            pair_hash = self.hash_pair(pair)
+            self._occurences_dict[pair_hash] = _get_new_value(pair_hash, value, increments)
 
     @staticmethod
     def hash_pair(pair):
         return hash((frozenset(pair[0].items()), frozenset(pair[1].items())))
+
+    def _get_pair_value(self, pair):
+        return self._occurences_dict[self.hash_pair(pair)]
 
 class RandomHeuristic(Heuristic):
     def selected_pairs(self, pairs, limit=3):
         r.shuffle(pairs)
         return pairs[:limit]
 
+
 class ProbabilityHeuristic(Heuristic):
-
-    def _get_pair_value(self, occurences_dict, pair):
-        return occurences_dict(self.hash_pair(pair))
-
     def selected_pairs(self, pairs, limit=3):
         prob_arr = np.array([self._occurences_dict[key] / sum(self._occurences_dict.values()) for key in self._occurences_dict.keys()])
         random_indexes = np.random.choice(len(pairs), limit, p=prob_arr)
         return np.array(pairs)[random_indexes]
+
+
+class ReductionHeuristic(Heuristic):
+    def selected_pairs(self, pairs, limit=3):
+        selected = []
+        random_indexes = np.random.choice(len(pairs), limit)
+
+        for i in random_indexes:
+            value = self._get_pair_value(pairs[i])
+
+            if value > 0:
+                selected.append(i)
+
+            if len(selected) >= limit:
+                break
+
+        while len(selected) < limit:
+            random = np.random.randint(0, len(pairs))
+            if random not in selected:
+                selected.append(random)
+
+        return np.array(pairs)[selected]
+
 
 class DistanceHeuristic(Heuristic):
     def __init__(self, low_r, high_r):

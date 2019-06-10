@@ -1,6 +1,7 @@
 setup.py
 files/__init__.py
 heuristics/__init__.py
+heuristics/heuristics.py
 logic/__init__.py
 logic/pairs_processing.py
 logic/ransac.py
@@ -12,6 +13,7 @@ ransacai.egg-info/SOURCES.txt
 ransacai.egg-info/dependency_links.txt
 ransacai.egg-info/top_level.txt
 transformations/__init__.py
+transformations/transform.py
 utils/__init__.py
 utils/file_utils.py
 utils/image_utils.py
