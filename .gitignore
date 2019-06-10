@@ -145,3 +145,7 @@ errors/
 files/
 /files
 files
+
+.vscode
+.idea
+*.egg-info
