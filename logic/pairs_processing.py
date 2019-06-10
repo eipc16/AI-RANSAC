@@ -10,11 +10,12 @@ class PairProcessor:
     @get_execution_time
     def consistent_pairs(self, pairs, neighbours_limit, threshold):
         def _neighbours_count(pair):
-            neighbours_of_first = self._neighbours(pair[0], list(filter(f.partial(op.ne, pair), pairs)), neighbours_limit)
-            neighbours_of_second = self._neighbours(pair[1], list(map(lambda x: x[1], filter(f.partial(op.ne, pair), pairs))), neighbours_limit)
-
-            with open('neigh_dump.txt', mode='w') as file:
-                file.write(str(neighbours_of_first))
+            neighbours_of_first = \
+                self._neighbours(pair[0],
+                                 list(filter(f.partial(op.ne, pair), pairs)), neighbours_limit)
+            neighbours_of_second = \
+                self._neighbours(pair[1],
+                                 list(map(lambda x: x[1], filter(f.partial(op.ne, pair), pairs))), neighbours_limit)
 
             return len(list(filter(lambda x: x[1] in neighbours_of_second, neighbours_of_first)))
 

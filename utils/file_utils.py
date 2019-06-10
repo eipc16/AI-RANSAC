@@ -1,8 +1,7 @@
-import json, os, imageio
+import json, os
 import numpy as np
-from PIL import Image as pilImage
 
-from models.points import Point, KeyPoint
+from models.points import KeyPoint
 from models.image import Image
 from utils.json_utils import JSONHelper
 

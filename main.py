@@ -1,7 +1,5 @@
-from models.image import Image
 from utils.file_utils import FileHelper
 from utils.image_utils import ImageHelper
-from utils.time_utils import get_execution_time
 from logic.pairs_processing import PairProcessor
 from heuristics.heuristics import RandomHeuristic, DistanceHeuristic
 from transformations.transform import AffineTransformation, PerspectiveTransformation
@@ -97,7 +95,7 @@ def run(file, file2, dest=None, extract_points=True,
     transform = getTransformation(transformation, heuristic)
     r = Ransac()
 
-    result_pairs = r.start(con_pairs, max_error, iterations, transform, p=0.1, w=it_est)
+    result_pairs = r.start(con_pairs, max_error, iterations, transform, p=0.5, w=it_est)
     file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
 
     ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')
