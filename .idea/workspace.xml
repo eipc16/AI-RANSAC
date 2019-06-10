@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6774203c-bbe7-4018-b29e-6f29a59f014a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/extract.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/extract_features_64bit.ln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/harhessift.basis" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/readme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/extract_features/test.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/extract_features_64bit.ln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/harhessift.basis" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug1.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug2.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png.haraff.sift.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heuristics/heuristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/heuristics/heuristics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neigh_dump.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neigh_dump.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformations/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformations/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/image_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/image_utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,24 +15,46 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/SI_Ransac$main.coverage" NAME="main Coverage Results" MODIFIED="1560079971355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SI_Ransac$main.coverage" NAME="main Coverage Results" MODIFIED="1560164187656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="SI-Ransac" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="448">
-                <caret line="104" column="26" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+              <first_editor relative-caret-position="-853">
+                <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+              </first_editor>
+              <second_editor relative-caret-position="-182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="256">
+                <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
                 <folding>
-                  <element signature="e#0#30#0" expanded="true" />
+                  <element signature="e#0#18#0" expanded="true" />
                 </folding>
               </first_editor>
               <second_editor relative-caret-position="-182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -72,6 +70,9 @@
       <find>{dest}_</find>
       <find>\</find>
       <find>orientation='v'</find>
+      <find>R=</find>
+      <find>dist</find>
+      <find>distance</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -87,15 +88,15 @@
         <option value="$PROJECT_DIR$/logic/pairs_processing.py" />
         <option value="$PROJECT_DIR$/models/image.py" />
         <option value="$PROJECT_DIR$/utils/file_utils.py" />
-        <option value="$PROJECT_DIR$/heuristics/heuristics.py" />
         <option value="$PROJECT_DIR$/transformations/transform.py" />
         <option value="$PROJECT_DIR$/utils/image_utils.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/heuristics/heuristics.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="960" />
     <option name="y" value="37" />
     <option name="width" value="960" />
@@ -106,6 +107,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,6 +119,18 @@
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
               <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
               <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="mug_dist_perspective" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="mug_ran_affine" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
@@ -147,7 +161,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,6 +209,9 @@
       <module name="SI-Ransac" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/usr/bin/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -204,7 +220,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -224,38 +240,40 @@
       <updated>1560076425075</updated>
       <workItem from="1560076429714" duration="216000" />
       <workItem from="1560076758795" duration="3502000" />
-      <workItem from="1560080434674" duration="21588000" />
+      <workItem from="1560080434674" duration="21827000" />
+      <workItem from="1560156338047" duration="7909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25306000" />
+    <option name="totallyTimeSpent" value="33454000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="37" width="1924" height="1045" extended-state="6" />
+    <frame x="960" y="37" width="960" height="1043" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.15614973" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.1611479" />
       <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.16184351" />
       <window_info id="Favorites" order="2" sideWeight="0.20083682" side_tool="true" weight="0.12251656" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.36871508" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994641" weight="0.17318435" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997722" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893048" visible="true" weight="0.3930571" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005359" side_tool="true" weight="0.32915717" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50106955" side_tool="true" weight="0.49273744" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.2055866" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3039106" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.30502793" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="430" height="843" id="Documentation" order="5" side_tool="true" weight="0.15121412" />
+      <window_info anchor="right" x="0" y="0" width="430" height="843" id="Documentation" order="5" side_tool="true" weight="0.3112583" />
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
     </layout>
   </component>
@@ -263,52 +281,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_consistent_pairs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="414" column="43" selection-start-line="414" selection-start-column="43" selection-end-line="414" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_ransac_pairs.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_pairs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logic/pairs_processing.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="286">
-            <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-            <folding>
-              <element signature="e#0#21#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-104">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_ransac_out.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/book_/book_right.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/book_/book_left.png.haraff.sift.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -317,21 +289,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/mug/mug_out.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/image.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="105">
-            <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/file_utils.py">
       <provider selected="true" editor-type-id="live-pycharm">
@@ -348,17 +305,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/book_/book__pairs.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="104">
-            <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/files/book_/book_right.png.haraff.sift.png">
       <provider selected="true" editor-type-id="images" />
@@ -483,6 +429,65 @@
     <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_ransac_pairs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_consistent_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/zamek_perspective/zamek_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_40_affine/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_40_perspective/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_ran_affine/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/mug_dist_perspective/mug_ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/image.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="498">
+            <caret line="36" selection-start-line="36" selection-end-line="36" />
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-512">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/points.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="234">
+            <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="63" />
+            <folding>
+              <element signature="e#0#18#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic/pairs_processing.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="584">
+            <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <folding>
+              <element signature="e#0#21#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -491,32 +496,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/zamek_affine/zamek_consistent_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/zamek_perspective/zamek_ransac_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-853">
+            <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="448">
-            <caret line="104" column="26" lean-forward="true" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+          <first_editor relative-caret-position="256">
+            <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
             <folding>
-              <element signature="e#0#30#0" expanded="true" />
+              <element signature="e#0#18#0" expanded="true" />
             </folding>
           </first_editor>
           <second_editor relative-caret-position="-182" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -1,4 +1,4 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "venv/bin/python3"
+    "python.pythonPath": "/sbin/python"
 }

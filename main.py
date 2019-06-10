@@ -3,7 +3,7 @@ from utils.file_utils import FileHelper
 from utils.image_utils import ImageHelper
 from utils.time_utils import get_execution_time
 from logic.pairs_processing import PairProcessor
-from heuristics.heuristics import RandomHeuristic
+from heuristics.heuristics import RandomHeuristic, DistanceHeuristic
 from transformations.transform import AffineTransformation, PerspectiveTransformation
 from logic.ransac import Ransac
 import os
@@ -22,11 +22,13 @@ def get_common_substring(left_string, right_string):
 
     return output
 
-def getHeuristic(heuristic_name):
+
+def getHeuristic(heuristic_name, low_r=4, high_r=300):
     if heuristic_name == 'random':
         return RandomHeuristic()
-    else:
-        return None
+    elif heuristic_name == 'distance':
+        return DistanceHeuristic(low_r, high_r)
+
 
 def getTransformation(transformation_name, heuristic):
     if transformation_name == 'affine':
@@ -49,7 +51,7 @@ def run_extractor(filepath, dest):
     os.system(f'mv {filepath}.* {dest}/')
 
 def run(file, file2, dest=None, extract_points=True,
-        neighbours_limit=5, threshold=0.6, max_error=40,
+        neighbours_limit=10, threshold=0.2, max_error=40,
         iterations=1000, pairs=None, consistent_pairs=None,
         transformation='affine', heuristic_choice='random'):
 
@@ -103,5 +105,5 @@ def run(file, file2, dest=None, extract_points=True,
 
 
 if __name__ == '__main__':
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_40_affine', transformation='affine', heuristic_choice='random')
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_40_perspective', transformation='perspective', heuristic_choice='random')
+    # run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_ran_affine', transformation='perspective', heuristic_choice='random')
+    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_dist_perspective', transformation='perspective', heuristic_choice='distance')
