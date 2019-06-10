@@ -1,6 +1,9 @@
 import numpy as np
 
 class Transformation:
+    def __init__(self, points_cnt):
+        self._points_cnt = points_cnt
+
     def get_model(self, pairs):
         pass
 
@@ -15,12 +18,17 @@ class Transformation:
         except np.linalg.LinAlgError:
             return None
 
+    def get_points_cnt(self):
+        return self._points_cnt
+
+
 class AffineTransformation(Transformation):
     def __init__(self, heuristic):
+        super().__init__(3)
         self._heuristic = heuristic
     
     def get_model(self, pairs):
-        selectedPairs = self._heuristic.selected_pairs(pairs, limit=3)
+        selectedPairs = self._heuristic.selected_pairs(pairs, limit=self.get_points_cnt())
         
         matrix = np.array([
             [selectedPairs[0][0]['x'], selectedPairs[0][0]['y'], 1.0, 0.0, 0.0, 0.0],
@@ -52,10 +60,11 @@ class AffineTransformation(Transformation):
 
 class PerspectiveTransformation(Transformation):
     def __init__(self, heuristic):
+        super().__init__(4)
         self._heuristic = heuristic
 
     def get_model(self, pairs):
-        selectedPairs = self._heuristic.selected_pairs(pairs, limit=4)
+        selectedPairs = self._heuristic.selected_pairs(pairs, limit=self.get_points_cnt())
 
         matrix = np.array([
             [selectedPairs[0][0]['x'], selectedPairs[0][0]['y'], 1.0, 0.0, 0.0, 0.0, -selectedPairs[0][1]['x'] * selectedPairs[0][0]['x'], -selectedPairs[0][1]['y'] * selectedPairs[0][0]['x']],

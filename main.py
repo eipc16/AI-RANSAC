@@ -91,11 +91,13 @@ def run(file, file2, dest=None, extract_points=True,
 
     img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_consistent_pairs.png', lines=[con_pairs], orientation='horizontal')
 
+    it_est = 1 - (len(pairs) / len(con_pairs))
+
     heuristic = getHeuristic(heuristic_choice)
     transform = getTransformation(transformation, heuristic)
     r = Ransac()
 
-    result_pairs = r.start(con_pairs, max_error, iterations, transform)
+    result_pairs = r.start(con_pairs, max_error, iterations, transform, p=0.1, w=it_est)
     file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
 
     ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')

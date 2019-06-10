@@ -5,15 +5,24 @@ from utils.time_utils import get_execution_time
 
 
 class Ransac:
-    def start(self, pairs, max_error, iterations, transformation):
-        model = self._get_best_model(pairs, max_error, iterations, transformation)
+    def start(self, pairs, max_error, iterations, transformation, p=0.0, w=0.0):
+        model = self._get_best_model(pairs, max_error, iterations, transformation, p, w)
 
         return list(filter(lambda p: self._model_error(p, model) < max_error, pairs))
 
     @get_execution_time
-    def _get_best_model(self, pairs, max_error, iterations, transformation):
+    def _get_best_model(self, pairs, max_error, iterations, transformation, p, w):
         best_model, best_score = None, 0
-        p = Pool()
+        pool = Pool()
+
+        estimated_iterations = \
+            np.log(1 - p) \
+            / (np.log(1 - np.power(w, transformation.get_points_cnt())))
+
+        iterations = int(np.minimum(iterations, estimated_iterations) \
+            if estimated_iterations > 0 else iterations)
+
+        print(iterations)
 
         for i in range(iterations):
             model, score = None, 0
@@ -21,7 +30,7 @@ class Ransac:
                 model = transformation.get_model(pairs)
 
             copier = partial(self._model_error, model=model)
-            errors = np.array(p.map(copier, pairs))
+            errors = np.array(pool.map(copier, pairs))
             score = np.sum(errors < max_error)
 
             if score > best_score:
