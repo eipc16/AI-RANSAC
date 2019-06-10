@@ -1,8 +1,10 @@
 import numpy as np
+from heuristics.heuristics import ProbabilityHeuristic
 
 class Transformation:
-    def __init__(self, points_cnt):
+    def __init__(self, heuristic, points_cnt):
         self._points_cnt = points_cnt
+        self._heuristic = heuristic
 
     def get_model(self, pairs):
         pass
@@ -21,10 +23,14 @@ class Transformation:
     def get_points_cnt(self):
         return self._points_cnt
 
+    def update_occurences(self, pairs):
+        if isinstance(self._heuristic, ProbabilityHeuristic):
+            self._heuristic.update_pairs(pairs)
+
 
 class AffineTransformation(Transformation):
     def __init__(self, heuristic):
-        super().__init__(3)
+        super().__init__(heuristic, 3)
         self._heuristic = heuristic
     
     def get_model(self, pairs):
@@ -48,7 +54,7 @@ class AffineTransformation(Transformation):
             selectedPairs[2][1]['y'],
         ])
 
-        return self._model(matrix, vector.T)
+        return self._model(matrix, vector.T), pairs
 
     def _result_vector(self, vector):
         return np.array([
@@ -60,7 +66,7 @@ class AffineTransformation(Transformation):
 
 class PerspectiveTransformation(Transformation):
     def __init__(self, heuristic):
-        super().__init__(4)
+        super().__init__(heuristic, 4)
         self._heuristic = heuristic
 
     def get_model(self, pairs):

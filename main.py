@@ -1,7 +1,7 @@
 from utils.file_utils import FileHelper
 from utils.image_utils import ImageHelper
 from logic.pairs_processing import PairProcessor
-from heuristics.heuristics import RandomHeuristic, DistanceHeuristic
+from heuristics.heuristics import RandomHeuristic, DistanceHeuristic, ProbabilityHeuristic
 from transformations.transform import AffineTransformation, PerspectiveTransformation
 from logic.ransac import Ransac
 import os
@@ -26,7 +26,10 @@ def getHeuristic(heuristic_name, low_r=4, high_r=300):
         return RandomHeuristic()
     elif heuristic_name == 'distance':
         return DistanceHeuristic(low_r, high_r)
-
+    elif heuristic_name == 'probability':
+        return ProbabilityHeuristic()
+    else:
+        return None
 
 def getTransformation(transformation_name, heuristic):
     if transformation_name == 'affine':
@@ -34,7 +37,7 @@ def getTransformation(transformation_name, heuristic):
     elif transformation_name == 'perspective':
         return PerspectiveTransformation(heuristic)
     else:
-        None
+        return None
 
 
 def extract_filename_from_path(path):
@@ -49,7 +52,7 @@ def run_extractor(filepath, dest):
     os.system(f'mv {filepath}.* {dest}/')
 
 def run(file, file2, dest=None, extract_points=True,
-        neighbours_limit=10, threshold=0.2, max_error=40,
+        neighbours_limit=5, threshold=0.6, max_error=40,
         iterations=1000, pairs=None, consistent_pairs=None,
         transformation='affine', heuristic_choice='random'):
 
@@ -95,7 +98,7 @@ def run(file, file2, dest=None, extract_points=True,
     transform = getTransformation(transformation, heuristic)
     r = Ransac()
 
-    result_pairs = r.start(con_pairs, max_error, iterations, transform, p=0.5, w=it_est)
+    result_pairs = r.start(con_pairs, max_error, iterations, transform)
     file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
 
     ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')
@@ -105,5 +108,5 @@ def run(file, file2, dest=None, extract_points=True,
 
 
 if __name__ == '__main__':
-    # run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_ran_affine', transformation='perspective', heuristic_choice='random')
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_dist_perspective', transformation='perspective', heuristic_choice='distance')
+    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_dist_affine', transformation='perspective', heuristic_choice='distance')
+    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_prob_perspective', transformation='perspective', heuristic_choice='probability')

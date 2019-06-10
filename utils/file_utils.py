@@ -42,7 +42,7 @@ class FileHelper:
 
             out_obj = []
 
-            for obj in target_list:
+            for i, obj in enumerate(target_list):
                 if isinstance(obj, list) or isinstance(obj, np.ndarray):
                     out_obj.append(_recursive_list_encoder(obj))
                 else:

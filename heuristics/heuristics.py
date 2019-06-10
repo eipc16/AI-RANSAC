@@ -4,18 +4,43 @@ from models.points import Point
 
 
 class Heuristic:
+    def __init__(self):
+        self._occurences_dict = {}
+
     def selected_pairs(self, pairs, limit=3):
         pass
 
+    def update_pairs(self, pairs):
+        for i, pair in enumerate(pairs):
+            pair_hash = self.hash_pair(pair)
+
+            if pair_hash in self._occurences_dict.keys():
+                self._occurences_dict.update({pair_hash: self._occurences_dict[pair_hash] + 1})
+            else:
+                self._occurences_dict.update({pair_hash: 1})
+
+    @staticmethod
+    def hash_pair(pair):
+        return hash((frozenset(pair[0].items()), frozenset(pair[1].items())))
 
 class RandomHeuristic(Heuristic):
     def selected_pairs(self, pairs, limit=3):
         r.shuffle(pairs)
         return pairs[:limit]
 
+class ProbabilityHeuristic(Heuristic):
+
+    def _get_pair_value(self, occurences_dict, pair):
+        return occurences_dict(self.hash_pair(pair))
+
+    def selected_pairs(self, pairs, limit=3):
+        prob_arr = [self._occurences_dict[key] / sum(self._occurences_dict.values()) for key in self._occurences_dict.keys()]
+        random_indexes = np.random.choice(len(pairs), limit, p=prob_arr)
+        return np.array(pairs)[random_indexes]
 
 class DistanceHeuristic(Heuristic):
     def __init__(self, low_r, high_r):
+        super().__init__()
         self._low_r = np.square(low_r)
         self._high_r = np.square(high_r)
 

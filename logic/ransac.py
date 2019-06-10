@@ -19,10 +19,9 @@ class Ransac:
             np.log(1 - p) \
             / (np.log(1 - np.power(w, transformation.get_points_cnt())))
 
-        iterations = int(np.minimum(iterations, estimated_iterations) \
-            if estimated_iterations > 0 else iterations)
+        iterations = int(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations)
 
-        print(iterations)
+        transformation.update_occurences(pairs)
 
         for i in range(iterations):
             model, score = None, 0
@@ -35,6 +34,7 @@ class Ransac:
 
             if score > best_score:
                 print(f'Found new best [Score: {score}] [Prev: {best_score}] [Iteration: {i}]')
+                transformation.update_occurences(pairs)
                 best_score = score
                 best_model = model
 
@@ -53,4 +53,3 @@ class Ransac:
         real_u, real_v = data[1]['x'], data[1]['y']
 
         return np.sqrt(np.square(u - real_u) + np.square(v - real_v))
-
