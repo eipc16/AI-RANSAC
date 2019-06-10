@@ -108,5 +108,5 @@ def run(file, file2, dest=None, extract_points=True,
 
 
 if __name__ == '__main__':
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_dist_affine', transformation='perspective', heuristic_choice='distance')
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_prob_perspective', transformation='perspective', heuristic_choice='probability')
+    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_dist', transformation='perspective', heuristic_choice='distance')
+    # run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_prob', transformation='perspective', heuristic_choice='probability')

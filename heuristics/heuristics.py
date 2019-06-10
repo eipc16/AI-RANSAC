@@ -15,7 +15,7 @@ class Heuristic:
             pair_hash = self.hash_pair(pair)
 
             if pair_hash in self._occurences_dict.keys():
-                self._occurences_dict.update({pair_hash: self._occurences_dict[pair_hash] + 1})
+                self._occurences_dict.update({pair_hash: self._occurences_dict[pair_hash] + 10})
             else:
                 self._occurences_dict.update({pair_hash: 1})
 
@@ -34,7 +34,7 @@ class ProbabilityHeuristic(Heuristic):
         return occurences_dict(self.hash_pair(pair))
 
     def selected_pairs(self, pairs, limit=3):
-        prob_arr = [self._occurences_dict[key] / sum(self._occurences_dict.values()) for key in self._occurences_dict.keys()]
+        prob_arr = np.array([self._occurences_dict[key] / sum(self._occurences_dict.values()) for key in self._occurences_dict.keys()])
         random_indexes = np.random.choice(len(pairs), limit, p=prob_arr)
         return np.array(pairs)[random_indexes]
 

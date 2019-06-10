@@ -54,7 +54,7 @@ class AffineTransformation(Transformation):
             selectedPairs[2][1]['y'],
         ])
 
-        return self._model(matrix, vector.T), pairs
+        return self._model(matrix, vector.T), selectedPairs
 
     def _result_vector(self, vector):
         return np.array([
@@ -94,7 +94,7 @@ class PerspectiveTransformation(Transformation):
             selectedPairs[3][1]['y'],
         ])
 
-        return self._model(matrix, vector.T)
+        return self._model(matrix, vector.T), selectedPairs
 
     def _result_vector(self, vector):
         return np.array([

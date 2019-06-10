@@ -15,10 +15,10 @@ class Ransac:
         best_model, best_score = None, 0
         pool = Pool()
 
-        estimated_iterations = \
-            np.log(1 - p) \
-            / (np.log(1 - np.power(w, transformation.get_points_cnt())))
+        numerator = np.log(1 - p)
+        denominator = np.log(1 - np.power(w, transformation.get_points_cnt()))
 
+        estimated_iterations = numerator / (denominator if denominator > 0 else 0.0000001)
         iterations = int(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations)
 
         transformation.update_occurences(pairs)
@@ -26,7 +26,7 @@ class Ransac:
         for i in range(iterations):
             model, score = None, 0
             while model is None:
-                model = transformation.get_model(pairs)
+                model, selected_pairs = transformation.get_model(pairs)
 
             copier = partial(self._model_error, model=model)
             errors = np.array(pool.map(copier, pairs))
@@ -34,7 +34,8 @@ class Ransac:
 
             if score > best_score:
                 print(f'Found new best [Score: {score}] [Prev: {best_score}] [Iteration: {i}]')
-                transformation.update_occurences(pairs)
+                transformation.update_occurences(selected_pairs)
+                print('Best', selected_pairs)
                 best_score = score
                 best_model = model
 
