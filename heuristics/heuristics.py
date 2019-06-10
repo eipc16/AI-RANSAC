@@ -1,7 +1,7 @@
 import random as r
 import numpy as np
-from models.points import Point
-
+from multiprocessing import Pool
+from functools import partial
 
 class Heuristic:
     def __init__(self):
@@ -27,15 +27,14 @@ class Heuristic:
 
 class RandomHeuristic(Heuristic):
     def selected_pairs(self, pairs, limit=3):
-        r.shuffle(pairs)
-        return pairs[:limit]
+        return np.random.choice(pairs, limit)
 
 
 class ProbabilityHeuristic(Heuristic):
     def selected_pairs(self, pairs, limit=3):
         prob_arr = np.array([self._occurences_dict[key] / sum(self._occurences_dict.values()) for key in self._occurences_dict.keys()])
-        random_indexes = np.random.choice(len(pairs), limit, p=prob_arr)
-        return np.array(pairs)[random_indexes]
+        random_indexes = np.random.choice(pairs.shape[0], limit, p=prob_arr)
+        return pairs[random_indexes]
 
 
 class ReductionHeuristic(Heuristic):
@@ -57,7 +56,44 @@ class ReductionHeuristic(Heuristic):
             if random not in selected:
                 selected.append(random)
 
-        return np.array(pairs)[selected]
+        return pairs[selected]
+
+
+class NeighbourHeuristic(Heuristic):
+    def __init__(self):
+        super().__init__()
+        self._pool = Pool()
+
+    @staticmethod
+    def _calc_distance(point1, point2):
+        return np.square(point1['x'] - point2['x']) + np.square(point1['y'] - point2['y'])
+
+    def calc_neighbours(self, point, points, r):
+        distances = np.sum(np.linalg.norm(points - point))
+        limit = np.square(r)
+        return np.count_nonzero(distances < limit)
+
+    def selected_pairs(self, pairs, limit=3):
+        np.random.shuffle(pairs)
+        coords = np.array([[[p[0]['x'], p[0]['y']], [p[1]['x'], p[1]['y']]] for p in pairs])
+
+        selected = []
+        for i, pair in enumerate(coords):
+            left = self.calc_neighbours(pair[0], coords[:, 0], 5)
+            right = self.calc_neighbours(pair[1], coords[:, 1], 5)
+
+            if left > 5 and right > 5:
+                selected.append(i)
+
+            if len(selected) >= limit:
+                break
+
+        while len(selected) < limit:
+            random = np.random.randint(0, len(pairs))
+            if random not in selected:
+                selected.append(random)
+
+        return pairs[selected]
 
 
 class DistanceHeuristic(Heuristic):

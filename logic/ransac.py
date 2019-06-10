@@ -9,7 +9,7 @@ from time import time
 class Ransac:
     def start(self, pairs, max_error, iterations, transformation=AffineTransformation(), heuristic=RandomHeuristic(),
               p=0.0, w=0.0):
-        model = self._get_best_model(pairs, max_error, iterations, transformation, heuristic, p, w)
+        model = self._get_best_model(np.array(pairs), max_error, iterations, transformation, heuristic, p, w)
 
         return list(filter(lambda p: self._model_error(p, model) < max_error, pairs))
 
@@ -50,11 +50,15 @@ class Ransac:
 
                 best_score = score
                 best_model = model
-            elif isinstance(heuristic, ReductionHeuristic) and score < worst_score and i > 0:
-                print(f'Found new worst [Score: {score}] [Prev: {worst_score}] [Best: {best_score}] [Iteration: {i}]')
 
-                transformation.update_occurences(selected_pairs, new_value=0)
-                worst_score = score
+            if isinstance(heuristic, ReductionHeuristic):
+                if score < worst_score and i > 1:
+                    print(f'Found new worst [Score: {score}] '
+                          f'[Prev: {worst_score}] [Best: {best_score}] [Iteration: {i}]')
+                    transformation.update_occurences(selected_pairs, new_value=0)
+                    worst_score = score
+                elif score > worst_score:
+                    transformation.update_occurences(selected_pairs, 1)
 
         return best_model
 

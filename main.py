@@ -30,6 +30,8 @@ def getHeuristic(heuristic_name, low_r=4, high_r=300):
         return ProbabilityHeuristic()
     elif heuristic_name == 'reduction':
         return ReductionHeuristic()
+    elif heuristic_name == 'neighbours':
+        return NeighbourHeuristic()
     else:
         return None
 
@@ -111,5 +113,5 @@ def run(file, file2, dest=None, extract_points=True,
 
 if __name__ == '__main__':
     # run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_dist', transformation='perspective', heuristic_choice='distance')
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_prob', transformation='perspective', heuristic_choice='reduction')
+    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_prob', transformation='perspective', heuristic_choice='neighbours')
     # run('files/glasses/glasses2.png', 'files/glasses/glasses1.png', extract_points=True, dest='glasses_out', transformation='perspective', heuristic_choice='probability')

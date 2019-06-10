@@ -11,6 +11,12 @@ class Point:
         out = np.square(self.x - p.x) + np.square(self.y - p.y)
         return out
 
+    def __lt__(self, other):
+        return self._index < other._index
+
+    def __eq__(self, other):
+        return self._index == other._index
+
     def __repr__(self):
         return f"[X: {self.x}, Y: {self.y}]"
 
