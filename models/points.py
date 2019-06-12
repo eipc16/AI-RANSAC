@@ -26,7 +26,6 @@ class KeyPoint(Point):
         super().__init__(x, y)
         self._index = index
         self._features = features if isinstance(features, np.ndarray) else np.array(features)
-        self._size = self._features.shape[0]
 
     def size(self):
         return self._size

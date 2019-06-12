@@ -2,47 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6774203c-bbe7-4018-b29e-6f29a59f014a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee1.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee1.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee1.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee2.png.haraff.sift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee2.png.haraff.sift.params" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee2.png.haraff.sift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee_consistent_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/coffee/coffee_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/glasses/glasses1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/glasses/glasses2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/glasses/glasses_consistent_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/glasses/glasses_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/glasses/glasses_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/keypoints.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_consistent_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_ransac_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mug/mug_ransac_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/results/lines1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/results/lines2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/test_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_consistent_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_ransac_out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_ransac_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_test_consistent_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/zamek/zamek_test_pairs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/heuristics/heuristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/heuristics/heuristics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic/pairs_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/pairs_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logic/ransac.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/ransac.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/points.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/points.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +24,8 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="683">
-                <caret line="154" column="51" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
+              <first_editor relative-caret-position="129">
+                <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
                 <folding>
                   <element signature="e#0#39#0" expanded="true" />
                 </folding>
@@ -73,48 +35,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs_out.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_background.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_background.png.haraff.sift.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png.haraff.sift.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png.haraff.sift.params">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png.haraff.sift">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png">
+        <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__consistent_pairs.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_bad/book__ransac_pairs.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs.png">
+        <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__ransac_pairs.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -164,21 +91,21 @@
         <option value="$PROJECT_DIR$/build/lib/models/image.py" />
         <option value="$PROJECT_DIR$/transformations/transform.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/models/points.py" />
         <option value="$PROJECT_DIR$/utils/file_utils.py" />
         <option value="$PROJECT_DIR$/models/image.py" />
         <option value="$PROJECT_DIR$/logic/pairs_processing.py" />
         <option value="$PROJECT_DIR$/heuristics/heuristics.py" />
+        <option value="$PROJECT_DIR$/models/points.py" />
         <option value="$PROJECT_DIR$/logic/ransac.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="y" value="37" />
-    <option name="width" value="960" />
-    <option name="height" value="1043" />
+    <option name="x" value="173" />
+    <option name="y" value="89" />
+    <option name="width" value="1747" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -202,80 +129,14 @@
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
               <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
               <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="piano" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
               <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
               <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="book_final_test_bad" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="book_final_test_good" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="cactus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse2_reduction_persp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="mouse_reduction_persp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="mug" type="462c0819:PsiDirectoryNode" />
-              <item name="mug_reduction_persp_1new" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="wallet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="wallet" type="462c0819:PsiDirectoryNode" />
-              <item name="wallet_dist_persp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SI-Ransac" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="wallet" type="462c0819:PsiDirectoryNode" />
-              <item name="wallet_reduction_persp" type="462c0819:PsiDirectoryNode" />
+              <item name="piano" type="462c0819:PsiDirectoryNode" />
+              <item name="piano_persp_dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SI-Ransac" type="b2602c69:ProjectViewProjectNode" />
@@ -392,18 +253,17 @@
       <workItem from="1560156338047" duration="16382000" />
       <workItem from="1560174868626" duration="20205000" />
       <workItem from="1560235163550" duration="23153000" />
-      <workItem from="1560279674848" duration="35078000" />
+      <workItem from="1560279674848" duration="41752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120363000" />
+    <option name="totallyTimeSpent" value="127037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="37" width="1924" height="1045" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.17967914" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79916316" visible="true" weight="0.1764706" />
       <window_info id="Structure" order="1" sideWeight="0.5008489" side_tool="true" weight="0.16184351" />
       <window_info id="Favorites" order="2" sideWeight="0.20083682" side_tool="true" weight="0.12251656" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -418,7 +278,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50106955" side_tool="true" weight="0.49273744" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.2055866" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.036871508" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.19553073" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -432,47 +292,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_persp/cactus_consistent_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_persp/cactus_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_affine/cactus_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_affine/cactus_consistent_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_affine/cactus_ransac_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_persp/cactus_pairs_conspairs_out.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_affine/cactus1.png.haraff.sift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/cactus/cactus_reduction_affine/cactus2.png.haraff.sift">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_reduction_persp_1new/mug2.png.haraff.sift">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/mug/mug_reduction_persp_1new/mug_new.png.haraff.sift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/wallet/wallet_dist_persp/wallet1.png.haraff.sift">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/wallet/wallet_dist_persp/wallet2.png.haraff.sift">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -584,19 +403,6 @@
     <entry file="file://$PROJECT_DIR$/files/mug/mug_reduction_persp_1new/mug_consistent_pairs.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="2792">
-            <caret line="129" column="76" selection-start-line="129" selection-start-column="76" selection-end-line="129" selection-end-column="76" />
-            <folding>
-              <element signature="e#0#18#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transformations/transform.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
@@ -606,19 +412,6 @@
             </folding>
           </first_editor>
           <second_editor relative-caret-position="-170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logic/ransac.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="163">
-            <caret line="29" column="118" selection-start-line="29" selection-start-column="118" selection-end-line="29" selection-end-column="118" />
-            <folding>
-              <element signature="e#0#18#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
         </state>
       </provider>
     </entry>
@@ -641,37 +434,7 @@
     <entry file="file://$PROJECT_DIR$/files/book/book_final_test_bad/book__ransac_pairs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="683">
-            <caret line="154" column="51" selection-start-line="154" selection-start-column="51" selection-end-line="154" selection-end-column="51" />
-            <folding>
-              <element signature="e#0#39#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs_out.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_background.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_background.png.haraff.sift.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png.haraff.sift.params">
@@ -684,6 +447,123 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_left.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book_background.png.haraff.sift.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__pairs_conspairs_out.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__pairs_ranscons_out.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/book/book_final_test_good/book__ransac_pairs_out.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/RANSAC_PAIRS.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__ransac_pairs.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__all_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heuristics/heuristics.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="597">
+            <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <folding>
+              <element signature="e#0#18#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/points.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="337">
+            <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <folding>
+              <element signature="e#0#18#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/file_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="-716">
+            <folding>
+              <element signature="e#0#15#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/json_utils.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor>
+            <folding>
+              <element signature="e#0#28#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic/ransac.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="468">
+            <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+            <folding>
+              <element signature="e#0#18#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="129">
+            <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+            <folding>
+              <element signature="e#0#39#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__ransac_pairs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/piano/piano_persp_dist/piano__consistent_pairs.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
   </component>

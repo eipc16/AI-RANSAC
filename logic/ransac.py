@@ -8,7 +8,7 @@ from time import time
 from tqdm import tqdm
 
 class Ransac:
-    def start(self, pairs, max_error, iterations, transformation=AffineTransformation(), heuristic=RandomHeuristic(),
+    def start(self, pairs, max_error, iterations, new_pairs, transformation=AffineTransformation(), heuristic=RandomHeuristic(),
               p=0.0, w=0.0):
         model = self._get_best_model(np.array(pairs), max_error, iterations, transformation, heuristic, p, w)
 
@@ -34,6 +34,8 @@ class Ransac:
         if isinstance(heuristic, ProbabilityHeuristic) \
                 or isinstance(heuristic, ReductionHeuristic):
             transformation.update_occurences(pairs, new_value=1)
+
+        prev_score = 0
 
         for i in tqdm(range(iterations)):
             model, score, selected_pairs = None, 0, len(pairs)
@@ -62,8 +64,10 @@ class Ransac:
                     #            f'[Prev: {worst_score}] [Best: {best_score}] [Iteration: {i}]')
                     transformation.update_occurences(selected_pairs, new_value=0)
                     worst_score = score
-                elif score > worst_score:
+                elif score > prev_score:
                     transformation.update_occurences(selected_pairs, 1)
+
+            prev_score = score
 
         return best_model
 

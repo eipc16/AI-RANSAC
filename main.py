@@ -109,7 +109,7 @@ def run(file, file2, dest=None, extract_points=True,
         transform = getTransformation(transformation)
         r = Ransac()
 
-        result_pairs = r.start(con_pairs, max_error, iterations, transformation=transform, heuristic=heuristic, p=p, w=it_est)
+        result_pairs = r.start(con_pairs, max_error, iterations, pairs, transformation=transform, heuristic=heuristic, p=p, w=it_est)
         file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
 
         ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')
@@ -143,16 +143,16 @@ def _make_images(dest, file, file2, pairs=None, consistent_pairs=None, ransac_pa
                                   lines=[consistent_pairs, ransac_pairs], colors=[(0, 0, 255, 255), (255, 255, 0, 255)])
 
 if __name__ == '__main__':
-    # run('files/book/book_background.png', 'files/book/book_left.png',
-    #     extract_points=True, dest='book/book_final_test_good', transformation='perspective', heuristic_choice='distance',
-    #     low_r=4, high_r=400, p=0.7, max_error=20)
+    run('files/piano/piano_1.png', 'files/piano/piano_2.png',
+        extract_points=False, dest='piano/piano_persp_dist', pairs='piano__pairs.json', consistent_pairs='piano__consistent_pairs.json', transformation='perspective', heuristic_choice='reduction',
+        low_r=4, high_r=400, p=0.7, max_error=15, threshold=0.3, neighbours_limit=30)
     #
     # run('files/book/book_background.png', 'files/book/book_left.png',
     #     extract_points=True, dest='book/book_final_test_bad', transformation='perspective', heuristic_choice='random',
     #     low_r=4, high_r=400, p=0.7, max_error=40, threshold=0.7, neighbours_limit=10)
 
-    name = 'book_'
-    _make_images('./files/book/book_final_test_good', 'book_background', 'book_left', pairs=f'{name}_pairs.json', consistent_pairs=f'{name}_consistent_pairs.json', ransac_pairs=f'{name}_ransac_pairs.json')
+    # name = 'book_'
+    # _make_images('./files/book/book_final_test_good', 'book_background', 'book_left', pairs=f'{name}_pairs.json', consistent_pairs=f'{name}_consistent_pairs.json', ransac_pairs=f'{name}_ransac_pairs.json')
 
 '''
         
