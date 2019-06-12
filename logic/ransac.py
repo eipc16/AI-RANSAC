@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 class Ransac:
     def start(self, pairs, max_error, iterations, new_pairs, transformation=AffineTransformation(), heuristic=RandomHeuristic(),
-              p=0.0, w=0.0):
+              p=None, w=0.0):
         model = self._get_best_model(np.array(pairs), max_error, iterations, transformation, heuristic, p, w)
 
         if model is None:
@@ -23,11 +23,12 @@ class Ransac:
         best_model, best_score, worst_score = None, 0, len(pairs) + 1
         pool = Pool()
 
-        numerator = np.log(1 - p)
-        denominator = np.log(1 - np.power(w, transformation.get_points_cnt()))
-        estimated_iterations = numerator / (denominator if denominator != 0 else 0.0000001)
+        if p is not None:
+            numerator = np.log(1 - p)
+            denominator = np.log(1 - np.power(w, transformation.get_points_cnt()))
+            estimated_iterations = numerator / (denominator if denominator != 0 else 0.0000001)
 
-        iterations = int(round(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations))
+            iterations = int(round(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations))
 
         transformation.set_heuristic(heuristic)
 

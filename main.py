@@ -62,7 +62,7 @@ def run(file, file2, dest=None, extract_points=True,
         neighbours_limit=50, threshold=0.5, max_error=15,
         iterations=5000, pairs=None, consistent_pairs=None,
         transformation='affine', heuristic_choice='random',
-        ransac=True, low_r=4, high_r=400, min_neighbours=5, p=0.5):
+        ransac=True, low_r=4, high_r=400, min_neighbours=5, p=None):
 
     filepath, filepath2 = file, file2
     file, file2 = extract_filename_from_path(file), extract_filename_from_path(file2)
@@ -145,7 +145,7 @@ def _make_images(dest, file, file2, pairs=None, consistent_pairs=None, ransac_pa
 if __name__ == '__main__':
     run('files/piano/piano_1.png', 'files/piano/piano_2.png',
         extract_points=False, dest='piano/piano_persp_dist', pairs='piano__pairs.json', consistent_pairs='piano__consistent_pairs.json', transformation='perspective', heuristic_choice='reduction',
-        low_r=4, high_r=400, p=0.7, max_error=15, threshold=0.3, neighbours_limit=30)
+        low_r=4, high_r=400, max_error=15, threshold=0.3, neighbours_limit=30)
     #
     # run('files/book/book_background.png', 'files/book/book_left.png',
     #     extract_points=True, dest='book/book_final_test_bad', transformation='perspective', heuristic_choice='random',
