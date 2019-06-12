@@ -1,0 +1,64 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \paragraph{}
+    Metoda ograniczenia liczby iteracji polega na wyznaczeniu odpowiedniej liczby obiegów metody RANSAC na podstawie prawdopodobieństwa tego czy po określonej liczbie iteracji model jest wystarczająco dobry oraz prawdopodobieństwa określającego jaka jest szansa na to, że losowo wybrana para ze zbioru ni jest szumem.
+    
+    \paragraph{}
+    Badania zostały przeprowadzone na wartościach prawdopodobieństwa p równych 0,10, 0,50, 0,75, oraz 0,9. Wartości parametru w zostały estymowane na podstawie stosunku liczby par przed i po zbadaniu spójności. W badaniach wykorzystano transformatę perspektywiczną oraz heurystykę opierającą się o odległości punktów kluczowych. Wyniki są wartościami uśrednionymi uzyskanymi na podstawie pięciu uruchomień.
+    
+    \begin{figure}[H]
+     \caption{Wyniki dla pary obrazów przedstawiających książkę}
+     \begin{center}
+        \begin{tabular}{|c|c|c|c||c|c|}
+        \hline
+        \multirow{2}{*}{\textbf{p}} & \multicolumn{3}{c||}{\textbf{Najlepsze rozwiązanie}} & \multicolumn{2}{c|}{\textbf{Całkowite przejście}} \\
+        
+        \cline{2-6}
+        {} & \textbf{Wynik} & \textbf{Iteracja} & \textbf{Czas [s]} & \textbf{Iteracje} & \textbf{Czas [s]} \\
+        
+        \hline
+        
+
+        {0,10}\makecell{} & \makecell{}{400} & \makecell{}{2} & \makecell{}{0,05} & \makecell{}{3} & \makecell{}{0,05} \\
+        \hline
+         {0,50}\makecell{} & \makecell{}{550} & \makecell{}{9} & \makecell{}{0,31} & \makecell{}{21} & \makecell{}{0,60} \\
+        \hline
+        {0,75}\makecell{} & \makecell{}{581} & \makecell{}{19} & \makecell{}{0,37} & \makecell{}{43} & \makecell{}{0,81} \\
+        \hline
+        {0,90}\makecell{} & \makecell{}{600} & \makecell{}{48} & \makecell{}{0,79} & \makecell{}{72} & \makecell{}{1,42} \\
+        \hline
+        
+        \end{tabular}
+     \end{center}
+    \end{figure}
+    
+    \begin{figure}[H]
+     \caption{Wyniki dla pary obrazów przedstawiających kubek}
+     \begin{center}
+        \begin{tabular}{|c|c|c|c||c|c|}
+        \hline
+        \multirow{2}{*}{\textbf{p}} & \multicolumn{3}{c||}{\textbf{Najlepsze rozwiązanie}} & \multicolumn{2}{c|}{\textbf{Całkowite przejście}} \\
+        
+        \cline{2-6}
+        {} & \textbf{Wynik} & \textbf{Iteracja} & \textbf{Czas [s]} & \textbf{Iteracje} & \textbf{Czas [s]} \\
+        
+        \hline
+        
+
+        {0,10}\makecell{} & \makecell{}{52} & \makecell{}{1} & \makecell{}{0,02} & \makecell{}{1} & \makecell{}{0,02} \\
+        \hline
+         {0,50}\makecell{} & \makecell{}{340} & \makecell{}{5} & \makecell{}{0,07} & \makecell{}{6} & \makecell{}{0,8} \\
+        \hline
+        {0,75}\makecell{} & \makecell{}{398} & \makecell{}{6} & \makecell{}{0,08} & \makecell{}{12} & \makecell{}{0,14} \\
+        \hline
+        {0,90}\makecell{} & \makecell{}{403} & \makecell{}{16} & \makecell{}{0,15} & \makecell{}{21} & \makecell{}{0,40} \\
+        \hline
+        
+        \end{tabular}
+     \end{center}
+    \end{figure}
+    
+    Już dwie wybrane pary obrazów pokazują główną zaletę metody estymacji iteracji. Kosztem utracenia klilku par punktów kluczowych, czas i liczba iteracji zmniejszyły się prawie stukrotnie. Z przeprowadzonych badań można jasno wywnioskować, że wartość parametru p nie powinna być mniejsza niż 0,5, ponieważ redukuje to liczbę iteracji do bardzo małych wartości, które nie pozwalają na znalezienie satysfakcjonującego wyniku. Wraz ze wzrostem wartości parametru p liczba iteracji wzrasta, jednak nawet dla wartości niemalże równych 1 jest ona stosunkowo mała. Metoda ta miałaby zastosowanie w systemach, gdzie wymagana jest szybka, nawet jeśli nie w pełni poprawna odpowiedź. Niestety mała liczba iteracji prowadzi do dużej losowości otrzymywanych wyników. Rezultaty znajdujące się w powyżych tabelach zostały uzyskane poprzez uśrednienie wyników otrzymanych po pięciu uruchomieniach metody, jednak nie jest do wystarczające do właściwej oceny tego sposobu na przyśpieszenie metody RANSAC. W celu dokładnego zweryfikowania tej metody konieczne byłoby uśrednienie wyników otrzymanych z minimum kilkudziesięciu prób.
+    
+\end{document}

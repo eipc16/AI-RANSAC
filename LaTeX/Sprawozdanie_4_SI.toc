@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Opis implementacji}{2}% 
+\contentsline {section}{\numberline {2}Prezentacja dzia\IeC {\l }ania algorytmu}{2}% 
+\contentsline {subsection}{\numberline {2.1}Kubek}{3}% 
+\contentsline {subsection}{\numberline {2.2}Portfel}{3}% 
+\contentsline {subsection}{\numberline {2.3}Mysz komputerowa}{3}% 
+\contentsline {subsection}{\numberline {2.4}Ksi\IeC {\k a}\IeC {\.z}ka}{4}% 
+\contentsline {subsection}{\numberline {2.5}Kaktus}{4}% 
+\contentsline {subsection}{\numberline {2.6}Podsumowanie por\IeC {\'o}wna\IeC {\'n}}{5}% 
+\contentsline {section}{\numberline {3}Podsumowanie}{5}% 

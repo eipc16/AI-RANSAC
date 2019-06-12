@@ -1,0 +1,62 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+   \paragraph{}
+   W przypadku kiedy obiekt na zdjęciach znajduje się w różnych ustawieniach, czyli np. jest obrócony lub leży pod kątem, podobnieństwo może nie zostać stwierdzone. Rozwiązaniem tego problemu są transformaty, które odpowiadają za przekształcenie jednego obrazu w drugi. Badanie skupia się na dwóch transformatach: afinicznej i perspektywicznej. Transformata afiniczna odpowiada za przekształcenia typu przesunięcie, skalowanie i obrót. Transformata perspektywiczna natomiast rozszerza ją i bierze pod uwagę przekształcenie polegające na spłaszczaniu i rozciąganiu obrazu. Dzięki nim jesteśmy w stanie porównać obiekty nawet w przypadku kiedy oba obrazy pokazują je pod innym kątem.
+    
+    \paragraph{}
+    Badania przeprowadzone zostały dla liczby iteracji równej 5000, dodatkowo próg błędu wynosi 25. Przedstawione rezultaty są średnimi wynikami z pięciu uruchomień. Kolumny Para i Iteracja oznaczają kolejno liczbę otrzymanych w wyniku działania metody RANSAC par oraz, w której iteracji zostało znalezione to rozwiązanie. Czas przetwarzania natomiast oznacza liczbę sekund potrzebną na ukończenie wszystkich pięciu tysięcy iteracji.
+    
+    \centering
+    \begin{table}[H]
+    \caption{Porównanie wyników dla transformaty afinicznej i perspektywicznej}
+     \label{t:transform}
+     \begin{center}
+        \begin{tabular}{|l|c|r|p{2.5cm}||r|r|p{2.5cm}|}
+            \hline
+            \multirow{2}{*}{\textbf{Przedmiot}} &
+            \multicolumn{3}{c||}{\textbf{Transformata afiniczna}} &
+            \multicolumn{3}{c|}{\textbf{Transformata perspektywiczna}} \\
+            
+            \cline{2-7} &
+            \textbf{Pary} & \textbf{Iteracja} & \textbf{Czas przetwarzania [s]} & 
+            \textbf{Pary} & \textbf{Iteracja} & \textbf{Czas przetwarzania [s]} \\
+
+             \hline
+             {Kubek} & {406} & {12} & \makecell{}{66,57} & {406} & {14} & \makecell{}{99,43} \\
+             \hline
+             {Portfel} & {214} & {231} & \makecell{}{31,11} & {239} & {760} & \makecell{}{75,09} \\
+             \hline
+             {Myszka} & {36} & {1131} & \makecell{}{18,47} & {49} & {638} & \makecell{}{33,42} \\
+             \hline
+             {Książka} & {595} & {4000} & \makecell{}{90,81} & {648} & {102} & \makecell{}{127,67}  \\
+             \hline 
+             {Kaktus} & {13} & {3573} & \makecell{}{29,52} & {15} & {3582} & \makecell{}{49,89} \\
+            \hline
+        \end{tabular}
+     \end{center}
+
+    \end{table}
+    
+        \begin{figure}[H]
+        \caption{Wpływ wyboru transformaty na czas przetwarzania}
+        \centering
+        \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm,
+            xticklabels={'', '', Myszka, Kaktus, Portfel, Kubek, Książka},
+            enlargelimits=0.15,
+            ylabel={Czas przetwarzania [s]},
+            xlabel={Przedmiot},
+            ybar
+        ]
+            \addplot plot coordinates {(1,18.47) (2,29.52) (3,31.11) (4,66.57) (5,90.81)};
+            \addplot plot coordinates {(1,33.42) (2,49.89) (3,75.09) (4,99.43) (5,127.67)};
+        \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+    
+    \justify
+    Głównym wnioskiem wysuwającym się po przeprowadzeniu badań jest to, że czas przetwarzania w przypadku transformaty perspektywicznej jest dłuższy. Spowodowane jest to tym, że uwzględnienie transformacji rozciągania i zwężania obrazu wymaga większej liczby obliczeń. W większości przypadków transformata perspektywiczna osiągała lepsze wyniki, ponieważ większość par zdjęć źródłowych różniła się kątem nachylenia przedmiotu. Można także zauważyć, że transformata prespektywicza zwykle znajdowała lepsze wyniki już w początkowych iteracjach. Jednak mogła na to mieć także wpływ losowość metody RANSAC.
+    
+\end{document}

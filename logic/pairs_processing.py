@@ -20,7 +20,8 @@ class PairProcessor:
             return len(list(filter(lambda x: x[1] in neighbours_of_second, neighbours_of_first)))
 
         def _in_threshold(x):
-            return float(_neighbours_count(x) / neighbours_limit >= threshold)
+            res = _neighbours_count(x)
+            return float(res / neighbours_limit >= threshold)
 
         filtered_points = np.array(list(filter(lambda p : _in_threshold(p), pairs)))
         return np.array([(Point(k['x'], k['y'], index=k['_index']), Point(k2['x'], k2['y'], index=k2['_index'])) for k, k2 in filtered_points])

@@ -21,7 +21,7 @@ def get_common_substring(left_string, right_string):
     return output
 
 
-def getHeuristic(heuristic_name, low_r=4, high_r=300):
+def getHeuristic(heuristic_name, low_r, high_r, min_neighbours):
     if heuristic_name == 'random':
         return RandomHeuristic()
     elif heuristic_name == 'distance':
@@ -31,7 +31,7 @@ def getHeuristic(heuristic_name, low_r=4, high_r=300):
     elif heuristic_name == 'reduction':
         return ReductionHeuristic()
     elif heuristic_name == 'neighbours':
-        return NeighbourHeuristic()
+        return NeighbourHeuristic(min_neighbours)
     else:
         return None
 
@@ -51,14 +51,18 @@ def extract_filename_from_path(path):
 
 def run_extractor(filepath, dest):
     os.system(f'./extractor/extract_features_64bit.ln -haraff -sift -i {filepath} -DE')
-    filename = extract_filename_from_path(filepath)
+
+    if not os.path.exists(dest):
+        os.makedirs(dest)
+
     os.system(f'cp {filepath} {dest}/')
     os.system(f'mv {filepath}.* {dest}/')
 
 def run(file, file2, dest=None, extract_points=True,
-        neighbours_limit=5, threshold=0.4, max_error=20,
-        iterations=1000, pairs=None, consistent_pairs=None,
-        transformation='affine', heuristic_choice='random'):
+        neighbours_limit=50, threshold=0.5, max_error=15,
+        iterations=5000, pairs=None, consistent_pairs=None,
+        transformation='affine', heuristic_choice='random',
+        ransac=True, low_r=4, high_r=400, min_neighbours=5, p=0.5):
 
     filepath, filepath2 = file, file2
     file, file2 = extract_filename_from_path(file), extract_filename_from_path(file2)
@@ -85,6 +89,7 @@ def run(file, file2, dest=None, extract_points=True,
     else:
         pairs = file_helper.load_from_json(pairs)
 
+    print(f'Pairs count: {len(pairs)}')
     img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_pairs.png', lines=[pairs], orientation='horizontal')
 
     if consistent_pairs is None:
@@ -94,24 +99,62 @@ def run(file, file2, dest=None, extract_points=True,
     else:
         con_pairs = file_helper.load_from_json(consistent_pairs)
 
+    print(f'Consistent pairs count: {len(con_pairs)}')
     img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_consistent_pairs.png', lines=[con_pairs], orientation='horizontal')
 
-    it_est = 1 - (len(pairs) / len(con_pairs))
+    if ransac:
+        it_est = len(con_pairs) / len(pairs)
 
-    heuristic = getHeuristic(heuristic_choice)
-    transform = getTransformation(transformation)
-    r = Ransac()
+        heuristic = getHeuristic(heuristic_choice, low_r, high_r, min_neighbours)
+        transform = getTransformation(transformation)
+        r = Ransac()
 
-    result_pairs = r.start(con_pairs, max_error, iterations, transformation=transform, heuristic=heuristic)
-    file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
+        result_pairs = r.start(con_pairs, max_error, iterations, transformation=transform, heuristic=heuristic, p=p, w=it_est)
+        file_helper.save_as_json(f'{common_name}_ransac_pairs.json', result_pairs)
 
-    ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')
+        ransac_pairs = file_helper.load_from_json(f'{common_name}_ransac_pairs.json')
+        print(f'Ransac pairs count: {len(ransac_pairs)}')
 
-    img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_ransac_pairs.png', lines=[ransac_pairs], orientation='horizontal')
-    img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_all_pairs.png', lines=[pairs, con_pairs, ransac_pairs], orientation='horizontal')
+        img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_ransac_pairs.png', colors=[(255, 255, 0, 255)], lines=[ransac_pairs], orientation='horizontal')
+        img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_all_pairs.png', lines=[pairs, con_pairs, ransac_pairs], orientation='horizontal')
 
+
+def _make_images(dest, file, file2, pairs=None, consistent_pairs=None, ransac_pairs=None):
+    file_helper = FileHelper(dest)
+    img_helper = ImageHelper(dest)
+
+    pairs = file_helper.load_from_json(pairs)
+    print(f'Pairs: {len(pairs)}')
+    common_name = get_common_substring(file, file2)
+
+    img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_clean_out.png', lines=[])
+
+    if consistent_pairs is not None:
+        consistent_pairs = file_helper.load_from_json(consistent_pairs)
+        print(f'Consistent pairs: {len(consistent_pairs)}')
+        img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_pairs_conspairs_out.png', lines=[pairs, consistent_pairs], colors=[(0,0,255,255), (255,255,0,255)])
+
+        if ransac_pairs is not None:
+            ransac_pairs = file_helper.load_from_json(ransac_pairs)
+            print(f'Ransac pairs: {len(ransac_pairs)}')
+            img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_ransac_pairs_out.png',
+                                  colors=[(255, 255, 0, 255)], lines=[ransac_pairs], orientation='horizontal')
+            img_helper.draw_lines([f'{file}.png', f'{file2}.png'], f'{common_name}_pairs_ranscons_out.png',
+                                  lines=[consistent_pairs, ransac_pairs], colors=[(0, 0, 255, 255), (255, 255, 0, 255)])
 
 if __name__ == '__main__':
-    # run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_dist', transformation='perspective', heuristic_choice='distance')
-    run('files/mug/mug1.png', 'files/mug/mug2.png', extract_points=True, dest='mug_persp_prob', transformation='perspective', heuristic_choice='neighbours')
-    # run('files/glasses/glasses2.png', 'files/glasses/glasses1.png', extract_points=True, dest='glasses_out', transformation='perspective', heuristic_choice='probability')
+    # run('files/book/book_background.png', 'files/book/book_left.png',
+    #     extract_points=True, dest='book/book_final_test_good', transformation='perspective', heuristic_choice='distance',
+    #     low_r=4, high_r=400, p=0.7, max_error=20)
+    #
+    # run('files/book/book_background.png', 'files/book/book_left.png',
+    #     extract_points=True, dest='book/book_final_test_bad', transformation='perspective', heuristic_choice='random',
+    #     low_r=4, high_r=400, p=0.7, max_error=40, threshold=0.7, neighbours_limit=10)
+
+    name = 'book_'
+    _make_images('./files/book/book_final_test_good', 'book_background', 'book_left', pairs=f'{name}_pairs.json', consistent_pairs=f'{name}_consistent_pairs.json', ransac_pairs=f'{name}_ransac_pairs.json')
+
+'''
+        
+        
+'''

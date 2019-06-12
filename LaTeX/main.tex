@@ -1,0 +1,108 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{titlesec}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[document]{ragged2e}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{pgfplotstable}
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\graphicspath{ {images/} }
+
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+
+\pdfinfo{%
+  /Title    (Sprawozdanie nr 4 Rozpoznawanie obrazów)
+  /Author   (Przemysław Pietrzak)
+  /Creator  (Przemyslaw Pietrzak)
+  /Producer (Przemysław Pietrzak)
+  /Subject  (Sztuczna inteligencja)
+  /Keywords (ransac, sift, sztuczna, inteligencja)
+}
+
+\begin{document}
+    \begin{titlepage}
+     \newgeometry{centering, margin=1.5cm}
+     \vspace*{\fill}
+    
+     \vspace*{-4cm}
+     \Huge\bfseries\
+     {Sztuczna inteligencja i inżynieria wiedzy}
+    
+     \LARGE
+     \centering
+     \vspace{2cm}
+     {Sprawozdanie nr 4}
+    
+     \Large
+     \centering
+     {Analiza obrazu - podobieństwo obrazów}
+     
+     \vspace*{0.5cm}
+     
+     \centering
+     \large 
+     \vspace{0.5cm}
+     Przemysław Pietrzak, 238083
+     
+     Środa, 17:05
+     
+     \vspace*{\fill}
+     \restoregeometry
+    \end{titlepage}
+    
+    \newpage
+    \tableofcontents
+    
+    \newpage
+    \justify
+    \section{Opis implementacji}
+    \subfile{sections/implementation}
+    
+    \justify
+    \section{Prezentacja działania algorytmu}
+    \subfile{sections/run_results}
+    
+    \newpage
+    \justify
+    \section{Badanie wpływu parametrów na algorytm spójności sąsiedztwa}
+    \subfile{sections/consistent_pairs}
+    
+    \newpage
+    \justify
+    \section{Badanie wpływu użytej transformaty na wyniki metody RANSAC}
+    \subfile{sections/transformations}
+    
+    \newpage
+    \justify
+    \section{Badanie wpływu parametrów  na wyniki metody RANSAC}
+    \subfile{sections/parameters}
+    
+    \newpage
+    \justify
+    \section{Badanie wpływu heurystyk na wyniki metody RANSAC}
+    \subfile{sections/heuristics}
+    
+    \justify
+    \section{Badanie metody ograniczania liczby iteracji}
+    \subfile{sections/iterations}
+    
+    \justify
+    \section{Uruchomienie algorytmu z uwzględnieniem wniosków cząstkowych}
+    \subfile{sections/comparison}
+    
+    \newpage
+    \justify
+    \section{Podsumowanie}
+    \subfile{sections/summary}
+    
+\end{document}

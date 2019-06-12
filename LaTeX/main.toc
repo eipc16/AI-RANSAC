@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}Opis implementacji}{2}% 
+\contentsline {section}{\numberline {2}Prezentacja dzia\IeC {\l }ania algorytmu}{2}% 
+\contentsline {subsection}{\numberline {2.1}Kubek}{3}% 
+\contentsline {subsection}{\numberline {2.2}Portfel}{3}% 
+\contentsline {subsection}{\numberline {2.3}Mysz komputerowa}{4}% 
+\contentsline {subsection}{\numberline {2.4}Ksi\IeC {\k a}\IeC {\.z}ka}{5}% 
+\contentsline {subsection}{\numberline {2.5}Kaktus}{6}% 
+\contentsline {subsection}{\numberline {2.6}Om\IeC {\'o}wienie wynik\IeC {\'o}w}{6}% 
+\contentsline {section}{\numberline {3}Badanie wp\IeC {\l }ywu parametr\IeC {\'o}w na algorytm sp\IeC {\'o}jno\IeC {\'s}ci s\IeC {\k a}siedztwa}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {subsection}{\numberline {3.1}Liczba s\IeC {\k a}siad\IeC {\'o}w}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {paragraph}{}{7}% 
+\contentsline {subsection}{\numberline {3.2}Pr\IeC {\'o}g sp\IeC {\'o}jno\IeC {\'s}ci}{8}% 
+\contentsline {paragraph}{}{8}% 
+\contentsline {paragraph}{}{8}% 
+\contentsline {subsection}{\numberline {3.3}Om\IeC {\'o}wienie wynik\IeC {\'o}w}{9}% 
+\contentsline {paragraph}{}{9}% 
+\contentsline {section}{\numberline {4}Badanie wp\IeC {\l }ywu u\IeC {\.z}ytej transformaty na wyniki metody RANSAC}{11}% 
+\contentsline {paragraph}{}{11}% 
+\contentsline {paragraph}{}{11}% 
+\contentsline {section}{\numberline {5}Badanie wp\IeC {\l }ywu parametr\IeC {\'o}w na wyniki metody RANSAC}{13}% 
+\contentsline {paragraph}{}{13}% 
+\contentsline {paragraph}{}{13}% 
+\contentsline {section}{\numberline {6}Badanie wp\IeC {\l }ywu heurystyk na wyniki metody RANSAC}{14}% 
+\contentsline {paragraph}{}{14}% 
+\contentsline {paragraph}{}{14}% 
+\contentsline {section}{\numberline {7}Badanie metody ograniczania liczby iteracji}{16}% 
+\contentsline {paragraph}{}{16}% 
+\contentsline {paragraph}{}{16}% 
+\contentsline {section}{\numberline {8}Podsumowanie}{17}% 
+\contentsline {paragraph}{}{17}% 
+\contentsline {paragraph}{}{17}% 
+\contentsline {paragraph}{}{17}% 

@@ -5,11 +5,15 @@ from utils.time_utils import get_execution_time
 from heuristics.heuristics import RandomHeuristic, ProbabilityHeuristic, ReductionHeuristic
 from transformations.transform import AffineTransformation
 from time import time
+from tqdm import tqdm
 
 class Ransac:
     def start(self, pairs, max_error, iterations, transformation=AffineTransformation(), heuristic=RandomHeuristic(),
               p=0.0, w=0.0):
         model = self._get_best_model(np.array(pairs), max_error, iterations, transformation, heuristic, p, w)
+
+        if model is None:
+            return list()
 
         return list(filter(lambda p: self._model_error(p, model) < max_error, pairs))
 
@@ -21,9 +25,9 @@ class Ransac:
 
         numerator = np.log(1 - p)
         denominator = np.log(1 - np.power(w, transformation.get_points_cnt()))
+        estimated_iterations = numerator / (denominator if denominator != 0 else 0.0000001)
 
-        estimated_iterations = numerator / (denominator if denominator > 0 else 0.0000001)
-        iterations = int(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations)
+        iterations = int(round(np.minimum(iterations, estimated_iterations) if estimated_iterations > 0 else iterations))
 
         transformation.set_heuristic(heuristic)
 
@@ -31,7 +35,7 @@ class Ransac:
                 or isinstance(heuristic, ReductionHeuristic):
             transformation.update_occurences(pairs, new_value=1)
 
-        for i in range(iterations):
+        for i in tqdm(range(iterations)):
             model, score, selected_pairs = None, 0, len(pairs)
             while model is None:
                 model, selected_pairs = transformation.get_model(pairs)
@@ -41,7 +45,8 @@ class Ransac:
             score = np.sum(errors < max_error)
 
             if score > best_score:
-                print(f'Found new best [Score: {score}] [Prev: {best_score}] [Iteration: {i}] [Time: {(time() - time_start):4f}s]')
+                tqdm.write(f'Found new best [Score: {score}] [Prev: {best_score}] '
+                           f'[Iteration: {i}] [Time: {(time() - time_start):4f}s]')
 
                 if isinstance(heuristic, ProbabilityHeuristic):
                     transformation.update_occurences(selected_pairs, new_increments=10)
@@ -51,10 +56,10 @@ class Ransac:
                 best_score = score
                 best_model = model
 
-            if isinstance(heuristic, ReductionHeuristic):
-                if score < worst_score and i > 1:
-                    print(f'Found new worst [Score: {score}] '
-                          f'[Prev: {worst_score}] [Best: {best_score}] [Iteration: {i}]')
+            if isinstance(heuristic, ReductionHeuristic) and i > 1:
+                if score <= worst_score:
+                    # tqdm.write(f'Found new worst [Score: {score}] '
+                    #            f'[Prev: {worst_score}] [Best: {best_score}] [Iteration: {i}]')
                     transformation.update_occurences(selected_pairs, new_value=0)
                     worst_score = score
                 elif score > worst_score:

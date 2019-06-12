@@ -27,7 +27,8 @@ class Heuristic:
 
 class RandomHeuristic(Heuristic):
     def selected_pairs(self, pairs, limit=3):
-        return np.random.choice(pairs, limit)
+        random_indexes = np.random.randint(0, pairs.shape[0], limit)
+        return pairs[random_indexes]
 
 
 class ProbabilityHeuristic(Heuristic):
@@ -60,18 +61,18 @@ class ReductionHeuristic(Heuristic):
 
 
 class NeighbourHeuristic(Heuristic):
-    def __init__(self):
+    def __init__(self, r=5):
         super().__init__()
+        self._r = np.square(r)
         self._pool = Pool()
 
     @staticmethod
     def _calc_distance(point1, point2):
         return np.square(point1['x'] - point2['x']) + np.square(point1['y'] - point2['y'])
 
-    def calc_neighbours(self, point, points, r):
+    def calc_neighbours(self, point, points):
         distances = np.sum(np.linalg.norm(points - point))
-        limit = np.square(r)
-        return np.count_nonzero(distances < limit)
+        return np.count_nonzero(distances < self._r)
 
     def selected_pairs(self, pairs, limit=3):
         np.random.shuffle(pairs)
@@ -79,9 +80,9 @@ class NeighbourHeuristic(Heuristic):
 
         selected = []
         for i, pair in enumerate(coords):
-            left = self.calc_neighbours(pair[0], coords[:, 0], 5)
-            right = self.calc_neighbours(pair[1], coords[:, 1], 5)
-
+            left = self.calc_neighbours(pair[0], coords[:, 0])
+            right = self.calc_neighbours(pair[1], coords[:, 1])
+            
             if left > 5 and right > 5:
                 selected.append(i)
 

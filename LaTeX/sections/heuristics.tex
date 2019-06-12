@@ -1,0 +1,49 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+    \paragraph{}
+    W badanej metodzie transformaty wyliczają model na podstawie 3 lub 4 par punktów kluczowych. Sposób wyboru tych wartości może znacząco wpłynąć na jakoś działania metody RANSAC. Poniższe heurystyki mają za zadanie dokonać odpowiedniego wyboru tych punktów celem utworzenia poprawnego modelu. Ze względu na dużą liczbę obliczeń badania zostały przeprowadzone na zdjęciach przedstawiających przedmiot Książka. Wykorzystana została transformata perspektywiczna. Przedstawione wyniki są średnią z pięciu uruchomień.
+    
+    \paragraph{}
+    Badane heurystyki:
+    \begin{itemize}
+     \item{\textbf{losowa} - pary punktów wybierane są całkowicie losowo}
+     \item{\textbf{modyfikacja rozkładu} - pary, które prowadzą do poprawy wybierane są częściej}
+     \item{\textbf{odległości par punktów} - wybierane są pary, których punkty leżą blisko siebie na obrazach}
+     \item{\textbf{usuwanie niepoprawnych par} - pary, które doprowadzają do znalezienia najgorszego dotychczas rozwiązania nie są brane pod uwagę w kolejnych iteracjach}
+     \item{\textbf{rozmiar sąsiedztwa} - wybierane są pary, których rozmiar sądziedztwa jest największy}
+    \end{itemize}
+    
+    \begin{figure}[H]
+     \caption{Badanie wpływu heurystyk na wynik metody RANSAC}
+     \begin{center}
+        \begin{tabular}{|c|c|c|c||c|c|}
+        \hline
+        \multirow{2}{*}{\textbf{Heurystyka}} & \multicolumn{3}{c||}{\textbf{Najlepsze rozwiązanie}} & \multicolumn{2}{c|}{\textbf{Całkowite przejście}} \\
+        
+        \cline{2-6}
+        {} & \textbf{Wynik} & \textbf{Iteracja} & \textbf{Czas [s]} & \textbf{Iteracje} & \textbf{Czas [s]} \\
+        
+        \hline
+        
+        {Losowa}\makecell{} & \makecell{}{618} & \makecell{}{1587} & \makecell{}{39.76} & \makecell{2000} & \makecell{}{45,23} \\
+        \hline
+        {Modyfikacja rozkładu}\makecell{} & \makecell{}{619} & \makecell{}{1579} & \makecell{}{47,03} & \makecell{2000} & \makecell{}{59,54} \\
+        \hline
+        {Odległość r=4, R=400}\makecell{} & \makecell{}{628} & \makecell{}{1317} & \makecell{}{32,92} & \makecell{2000} & \makecell{}{48,48} \\
+        \hline
+        {Odległość r=4, R=1000}\makecell{} & \makecell{}{640} & \makecell{}{1642} & \makecell{}{39,55} & \makecell{2000} & \makecell{}{48,43} \\
+        \hline
+        {Usuwanie}\makecell{} & \makecell{}{610} & \makecell{}{1401} & \makecell{}{34,76} & \makecell{2000} & \makecell{}{49,09} \\
+        \hline
+        {Sąsiedztwo - 5}\makecell{} & \makecell{}{604} & \makecell{}{404} & \makecell{}{33,55} & \makecell{2000} & \makecell{}{167,09} \\
+        \hline
+        {Sąsiedztwo - 20}\makecell{} & \makecell{}{615} & \makecell{}{409} & \makecell{}{35,63} & \makecell{2000} & \makecell{}{182,62} \\
+        \hline
+        \end{tabular}
+     \end{center}
+    \end{figure}
+
+    Wszystkie badane metody uzyskały zadowalające wyniki. Najwyższy wynik uzyskała prosta heurystyka wyboru punktów na podstawie odległości r=4 oraz R=1000. Głównym założeniem tej heurystyki jest to, że prawdopodobieństwo wylosowania punktów leżących blisko siebie jest większe niż wylosowania takich, które znajdują się w większej odległości. Dolna granica odległości jest odpowiedzialna za zminimalizowanie możliwości wystąpienia błędów obliczeniowych. Parametry r oraz R należy dobrać odpowiednio do badanej przez nas pary obrazów. Dodatkowo warto wspomnieć, że heurystyka ta wymaga wielu obliczeń, dlatego jej czas wykonania może być znacznie większy. Jednak jedną z jej zalet jest to, że pozwala ona znaleźć bardzo dobre rozwiązania w stosunkowo małej liczbie iteracji. Łącząc ją z badaną w późniejszych etapach metodą estymacji wymaganej liczby iteracji można uzyskać satysfakcjonujące wyniki w niedługim czasie. Pod względem iteracji wyróźnia się heurystyka polegająca na wybieraniu par, których punkty największą liczebność sąsiedztwa. Obie z badanych wartości parametru r uzyskały satysfakcjonujący wynik już przy ok. 400 iteracjach. Czas obliczeniowy potrzebny na wyznaczenie sąsiedztwa dla każdego z punktów w parach jest jednak ogromny dlatego rezultaty czasowe, szczególnie dla całkowitego przejścia), nie są zadowalające. Usprawnienie implementacji, poprzez przykładowo, wyznaczanie sąsiedztwa na wielu wątkach jednocześnie mogłoby doprowadzić do lepszych rezultatów czasowych. Najgorzej wypadła heurystyka wyznaczająca pary punktów kluczowych 'Modyfikacja rozkładu', która polega na wybieraniu częściej tych par, które wcześniej zwracały dobre rezultaty. Otrzymany wynik jednak może być wynikiem wadliwej implementacji.
+    
+\end{document}

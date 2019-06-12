@@ -1,0 +1,71 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+   Metoda RANSAC jako parametry przyjmuje dwie wartości, liczbę iteracji oraz maksymalną wartość błędu, której przekroczenie powoduje odfiltrowanie pary ze zbioru wynikowego. Do obliczeń wykorzystano transformatę afiniczą z heurystyką wybierającą trzy losowe pozycje ze zbioru par punktów kluczowych.
+    
+    \begin{table}[H]
+    \caption{Wyniki pomiarów czasu w zależności od liczby iteracji}
+     \label{t:iterations}
+     \begin{center}
+        \begin{tabular}{|l|r|r|r|r|}
+            \hline
+            \multirow{2}{*}{{}} &
+            \multicolumn{4}{c|}{\textbf{Liczba iteracji}} \\
+            
+            \cline{2-5}
+            {Przedmiot} & \textbf{10} & \textbf{500} & \textbf{1000} & \textbf{5000} \\
+            \cline{2-5}
+            {} & \multicolumn{4}{c|}{\textbf{Czas [s]}} \\
+            
+             \hline
+             {Myszka} & {0,04} & {2,70} & {4,57} & {29,97}  \\
+             \hline 
+             {Kaktus} & {0,05} & {2,41} & {4,82} & {32,48} \\
+             \hline
+             {Portfel} & {0,12} & {3,31} & {6,84} & {41,89}  \\
+            \hline
+             {Kubek} & {0,15} & {9,36} & {19,01} & {102,29} \\
+             \hline
+             {Książka} & {0,21} & {10,84} & {26,92} & {124,54}  \\
+            \hline
+            
+        \end{tabular}
+     \end{center}
+    \end{table}
+
+    \begin{table}[H]
+    \caption{Wyniki działania algorytmu w zależności o wartości błędu maksymalnego}
+     \label{t:errs}
+     \begin{center}
+        \begin{tabular}{|l|r|r|r|r|}
+            \hline
+            \multirow{2}{*}{{}} &
+            \multicolumn{4}{c|}{\textbf{Wartość maksymalnego błędu}} \\
+            
+            \cline{2-5}
+            {Przedmiot} & \textbf{1} & \textbf{20} & \textbf{40} & \textbf{200} \\
+            \cline{2-5}
+            {} & \multicolumn{4}{c|}{\textbf{Największy konsensus}} \\
+            
+             \hline
+             {Kubek} & {80} & {407} & {407} & {445} \\
+             \hline
+             {Portfel} & {59} & {222} & {225} & {242}  \\
+             \hline
+             {Myszka} & {6} & {37} & {40} & {52}  \\
+             \hline
+             {Książka} & {60} & {645} & {645} & {650}  \\
+             \hline
+             {Kaktus} & {11} & {12} & {12} & {12} \\
+            \hline
+        \end{tabular}
+     \end{center}
+    \end{table}
+   
+   \paragraph{}
+   Jak można zauważyć w badaniach liczba iteracji, zaraz obok rozmiaru list par punktów spójnych jest jednym z najważniejszych czynników wpływających na czas przetwarzania. Przy zbyt małej liczbie iteracji algorytm nie jest w stanie znaleźć optymalnego rozwiązania duża liczba iteracji jednak znacząco wpływa na czas działania programu, podczas gdy rozwiązanie mogło zostać znalezione już na samym początku.
+   
+   \paragraph{}
+   Maksymalny błąd natomiast jest jednym z czynników definiujących skuteczność metody RANSAC, zbyt mały błąd powoduje odfiltrowanie znacznej liczby właściwych par, natomiast zbyt duży pozostawia w danych wiele szumów. Przeprowadzone badania wskazują na to, że dla badanych par obrazków, najbardziej optymalny wartość błędu wynosi od 20 do 40.
+   
+\end{document}

@@ -27,7 +27,7 @@ class Image:
 
         zipped_points = zip(left_points, left[left_points])
 
-        return set(zipped_points)
+        return list(zipped_points)
     
     @get_execution_time
     def nearest_keypoints_indexes(self, target):

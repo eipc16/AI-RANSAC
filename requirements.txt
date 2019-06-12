@@ -1,3 +1,4 @@
 numpy==1.16.4
 Pillow==6.0.0
--e git+git@github.com:eipc16/AI-RANSAC.git@14af89f68e1b9c51260f3f5044d2c5eaf28b5a81#egg=ransacai
+-e git+git@github.com:eipc16/AI-RANSAC.git@d8f27a18115984aa97ac9ddadfc7897e38a29b43#egg=ransacai
+tqdm==4.32.1
